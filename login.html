@@ -17,12 +17,37 @@
 </head>
 
 <body>
-  <main class="mt-5">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
-      <div class="login">
-        <label for="usuario" class="login-data">Usuario:<input type=text id="usuario" placeholder="Ingrese nombre de usuario"> </label> <br>
-        <label for="password" class="login-data">Contraseña:<input type=password id="password" placeholder="Ingrese contraseña"> </label> <br>
-        <button class="btn-login" id="btn-inicio">Iniciar sesión</button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item" href="login.html">Iniciar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="d-flex justify-content-center
+  align-items-center vh-100">
+    <div class="container">
+      <div class="login border border-dark border-start-0 border-end-0 text-center">
+        <br> <label for="usuario" class="login-data">Usuario:<input type=text id="usuario" placeholder="Ingrese usuario"> </label> <br> <br>
+        <label for="password" class="login-data">Contraseña:<input type=password id="password" placeholder="Ingrese contraseña"> </label> <br> <br>
+        <button type="button" class="btn btn-primary" id="btn-inicio">Iniciar sesión</button> <br> <br>
       </div>
     </div>
   </main>
