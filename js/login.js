@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }else if (user!='' && pass===''){
             alert("Por favor ingrese contraseña")
         }else {
-            alert("Por fevor ingrese usuario y contraseña")
+            alert("Por favor ingrese usuario y contraseña")
         }
     })
 })
