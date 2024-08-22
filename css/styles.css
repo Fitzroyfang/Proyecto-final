@@ -188,3 +188,28 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#login {
+  background-color: #A9BCEC;
+}
+
+.login-data {
+  padding: 10px;
+}
+
+#usuario {
+  background-color: #B4C4EC;
+  margin-left: 15px;
+}
+
+#password {
+  background-color: #B4C4EC;
+  margin-left: 15px;
+}
+
+#btn-inicio {
+  background-color: #B4C4EC;
+  margin-left: 233px;
+  margin-top: 10px;
+}
+
