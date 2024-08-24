@@ -1,5 +1,6 @@
 let categorias = []
 
+
 function showCategoriesList(array){
     let htmlContentToAppend = "";
     console.log(array)
@@ -31,11 +32,17 @@ function showCategoriesList(array){
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData("https://japceibal.github.io/emercado-api/cats_products/101.json").then(function(resultObj){
-        if (resultObj.status === "ok")
-        {
-            let data = resultObj.data;
-            showCategoriesList(data);
-        }
-    });
+    const catID = localStorage.getItem("catID");
+    if (catID) {
+        const URL = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
+
+        getJSONData(URL).then(function(resultObj){
+            if (resultObj.status === "ok")
+            {
+                let data = resultObj.data;
+                showCategoriesList(data);
+            }
+        });
+    }
+    
 });
