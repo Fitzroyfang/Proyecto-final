@@ -2,24 +2,26 @@ let categorias = []
 
 function showCategoriesList(array){
     let htmlContentToAppend = "";
-
-    for(let i = 0; i < array.length; i++){ 
-        let category = array[i];
+    console.log(array)
+    let products = array.products;
+    console.log("products",products)
+    for(let i = 0; i < array.products.length; i++){ 
+        let product = array.products[i];
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="` + category.imgSrc + `" alt="product image" class="img-thumbnail">
+                    <img src="` + product.image + `" alt="product image" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
-                        <h4>`+ category.name +`</h4> 
-                        <p> `+ category.description +`</p> 
+                        <h4>${product.name}</h4> 
+                        <p>${product.description}</p> 
+                        <h3>${product.currency} ${product.cost}</h3>
+                        <small class="text-muted">Sold count: ${product.soldCount}</small>
                         </div>
-                        <small class="text-muted">` + category.productCount + ` artículos</small> 
                     </div>
-
                 </div>
             </div>
         </div>
@@ -29,11 +31,11 @@ function showCategoriesList(array){
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
+    getJSONData("https://japceibal.github.io/emercado-api/cats_products/101.json").then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            categoriesArray = resultObj.data;
-            showCategoriesList(categorias);
+            let data = resultObj.data;
+            showCategoriesList(data);
         }
     });
 });
