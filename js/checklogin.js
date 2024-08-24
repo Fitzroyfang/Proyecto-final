@@ -13,5 +13,3 @@ document.addEventListener('DOMContentLoaded', function(){
             document.getElementById('usuarioLoggeado').innerText = usuario;
             }
 })
-
-console.log(usuario);
