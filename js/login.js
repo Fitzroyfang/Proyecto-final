@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
         if (user!='' && pass!='') {
-            sessionStorage.setItem("user", usuario);
+            sessionStorage.setItem("user", user);
             location.href="index.html"
         }else if (user==='' && pass!=''){
             alert("Por favor ingrese usuario")
