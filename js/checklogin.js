@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         let usuario = sessionStorage.getItem("user");
         let inputUsuario = document.getElementById('inputUsuario');
-        sessionStorage.setItem("user", inputUsuario.value);
+        
 
         if (usuario == null){
             alert("Primero debe identificarse");
@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         
         else {
-            document.getElementById('usuarioLoggeado').innerText = usuario;
+            document.getElementById('usuarioLoggeado').textContent = usuario;
             }
 })
