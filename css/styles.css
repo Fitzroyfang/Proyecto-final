@@ -211,4 +211,70 @@ a.custom-card:hover {
   background-color: #B4C4EC;
   margin-top: 10px;
 }
+/* Estilos responsivos para diferentes resoluciones */
 
+
+/* General */
+#login {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-data {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  margin-bottom: 15px; 
+}
+
+.login-data input {
+  width: 100%; 
+  padding: 10px;
+  margin-top: 5px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+#btn-inicio {
+  width: 100%; 
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 575.98px) {
+  #login {
+    max-width: 90%; 
+    padding: 15px; 
+  }
+
+  .login-data {
+    margin-bottom: 10px; 
+}
+
+/* Tablet (576px a 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #login {
+    max-width: 80%;
+  }
+}
+
+/* Escritorio pequeño (768px a 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #login {
+    max-width: 60%;
+  }
+}
+
+/* Escritorio mediano y grande (más de 992px) */
+@media (min-width: 992px) {
+  #login {
+    max-width: 400px; 
+  }
+}
