@@ -11,7 +11,7 @@ function showCategoriesList(array){
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
-                <div class="col-3">
+                <div class="col-sm-6 col-lg-3">
                     <img src="` + product.image + `" alt="product image" class="img-thumbnail">
                 </div>
                 <div class="col">
