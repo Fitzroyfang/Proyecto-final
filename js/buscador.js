@@ -12,19 +12,17 @@ inputSearch.onkeyup = e => {
 
     if (userData) {
         emptyArray = suggestions.filter(data => {
-            return data.
-            toLocaleLowerCase()
+            return data
+            .toLocaleLowerCase()
             .startsWith(userData.toLocaleLowerCase());
         });
         
         emptyArray = emptyArray.map(data => {
-            return (data `<li>${data}</li>`);
+            return (`<li>${data}</li>`);
         });
 
         searchContainer.classList.add('active');
         showSuggestions(emptyArray);
-
-
 
     }
     else {
@@ -47,5 +45,3 @@ const showSuggestions = (list) => {
 
     boxSuggestions.innerHTML = listData;
 };
-
-
