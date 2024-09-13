@@ -1,0 +1,15 @@
+var suggestions = [
+    "Chevrolet Onix Joy",
+    "Fiat Way",
+    "Suzuki Celerio",
+    "Peugeot 208",
+    "Bugatti Chiron",
+    "Oso de peluche",
+    "Pelota de básquetbol",
+    "PlayStation 5",
+    "Bicicleta",
+    "Juego de comedor",
+    "Sofá",
+    "Armario",
+    "Mesa de centro",
+ ];
