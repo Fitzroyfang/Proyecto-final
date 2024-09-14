@@ -9,6 +9,14 @@
   font-weight: bold;
 }
 
+.navbar .container {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px
+}
+
 nav a {
   text-decoration: none;
 }
@@ -213,6 +221,71 @@ a.custom-card:hover {
 }
 /* Estilos responsivos para diferentes resoluciones */
 
+.search-input-box {
+  width: 300px;
+  border-radius: 5px;
+  position: relative;
+  color: white;
+  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 60px 0 20px;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 8px;
+  right: 25px;
+  font-size: 22px;
+  cursor: pointer;
+  color:#0d141f;
+}
+
+/*Sugerencias*/
+.container-suggestions {
+  position: absolute;
+  background-color: #343a40;
+  border-radius: 5px;
+  width: 300px;
+  max-height: 280px;
+  opacity: 0;
+  pointer-events: none;
+  padding: 0;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  z-index: 10; 
+}
+
+.search-input-box.active .container-suggestions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-input-box.active .container-suggestions li {
+  display: block;
+}
+
+.search-input-box.active .container-suggestions li p {
+  color: white;
+}
+
+.container-suggestions li {
+  display: none;
+  list-style: none;
+  width: 300px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.container-suggestions li:hover {
+  background-color: #414b57;
+}
 
 /* General */
 #login {
@@ -239,14 +312,12 @@ a.custom-card:hover {
   border-radius: 4px;
 }
 
-
 #btn-inicio {
   width: 100%; 
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
 }
-
 
 @media (max-width: 575.98px) {
   #login {
@@ -277,4 +348,4 @@ a.custom-card:hover {
   #login {
     max-width: 400px; 
   }
-}
+ }
