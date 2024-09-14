@@ -12,13 +12,18 @@ inputSearch.onkeyup = e => {
 
     if (userData) {
         emptyArray = suggestions.filter(data => {
-            return data
-            .toLocaleLowerCase()
-            .startsWith(userData.toLocaleLowerCase());
+            return data.name
+            .toLowerCase()
+            .startsWith(userData.toLowerCase());
         });
         
         emptyArray = emptyArray.map(data => {
-            return (`<li>${data}</li>`);
+            return (`<li>
+                        <a href="#${data.id}">
+                            <strong>${data.name}</strong> 
+                            <p>${data.description}</p>
+                        </a>
+                    </li>`);
         });
 
         searchContainer.classList.add('active');
@@ -35,7 +40,7 @@ const showSuggestions = (list) => {
     var listData;
 
     if (!list.length) {
-        userValue = inputSearch.value;
+       var userValue = inputSearch.value;
         listData = `<li>${userValue}</li>`;
     }
 
