@@ -10,6 +10,11 @@ const relDesc = document.getElementById('relDesc')
 
 //Función para mostrar los productos en pantalla
 
+function setProdID(id) {
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html"
+}
+
 function showCategoriesList(array) {
     let htmlContentToAppend = "";
     console.log(array)
@@ -18,7 +23,7 @@ function showCategoriesList(array) {
     for (let i = 0; i < array.products.length; i++) {
         let product = array.products[i];
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
+        <div onclick="setProdID(${product.id})" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
                     <img src="` + product.image + `" alt="product image" class="img-thumbnail">
