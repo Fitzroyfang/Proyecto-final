@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +14,7 @@
     }
   </style>
 </head>
+<body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -108,19 +108,24 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <a class="nav-item" href="login.html">Iniciar sesión</a>
+            <a class="nav-link" href="login.html">Iniciar sesión</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main class="d-flex justify-content-center
-  align-items-center vh-100">
+  <main class="d-flex justify-content-center align-items-center vh-100">
     <div class="container">
-      <div class="login border border-dark border-start-0 border-end-0 text-center">
-        <br> <label for="usuario" class="login-data">Usuario:<input type=text id="usuario" placeholder="Ingrese usuario"> </label> <br> <br>
-        <label for="password" class="login-data">Contraseña:<input type=password id="password" placeholder="Ingrese contraseña"> </label> <br> <br>
-        <button type="button" class="btn btn-primary" id="btn-inicio">Iniciar sesión</button> <br> <br>
+      <div class="login border border-dark border-start-0 border-end-0 text-center p-4">
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuario:</label>
+          <input type="text" id="usuario" class="form-control" placeholder="Ingrese usuario">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña:</label>
+          <input type="password" id="password" class="form-control" placeholder="Ingrese contraseña">
+        </div>
+        <button type="button" class="btn btn-primary" id="btn-inicio">Iniciar sesión</button>
       </div>
     </div>
   </main>
@@ -134,5 +139,4 @@
   </footer>
   <script src="js/login.js"></script>
 </body>
-
 </html>

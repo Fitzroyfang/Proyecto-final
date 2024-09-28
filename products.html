@@ -106,13 +106,27 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <a class="nav-item" href="login.html">Iniciar sesión</a>
+            <a class="nav-item" href="login.html" id="usuario-products">Iniciar sesión</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main class="pb-5 container">
+  <div id="sorting" class="container">
+    <div id="orden" class="container pb-2 d-flex justify-content-end">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="precioDesc"> <i class="fas fa-sort-amount-down"></i> $</button>
+        <button type="button" class="btn btn-default" id="precioAsc"> <i class="fas fa-sort-amount-up"></i> $</button>
+        <button type="button" class="btn btn-default" id="relDesc"> <i class="fas fa-sort-amount-down"></i> Rel.</button>
+      </div>
+    </div>
+    <div id="filtros" class="container d-flex justify-content-end">
+      <p>Precio: <input type="number" placeholder="min" id="min"> a <input type="number" placeholder="máx" id="max">
+      <button type="button" class="btn btn-default" id="filtrar">Filtrar</button>
+      <button type="button" class="btn btn-link" id="limpiar">Limpiar</button></p>
+    </div>
+  </div>
     <div id="cat-list-container">
       
     </div>
@@ -137,7 +151,9 @@
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
   <script src="js/checklogin.js"></script>
+
   <script src="js/buscador.js"></script>
+
 </body>
 
 </html>
