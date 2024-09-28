@@ -8,6 +8,10 @@
 .jumbotron .display-4 {
   font-weight: bold;
 }
+h3{
+  margin-top: 30px;
+  text-align: center;
+}
 
 .navbar .container {
   display: flex;
@@ -63,7 +67,9 @@ nav a {
 .jumbotron-heading {
   font-weight: 300;
 }
-
+.container-Img{
+  margin-bottom: 40px;
+}
 .jumbotron .container {
   max-width: 40rem;
   background-color: rgba(255, 255, 255, 0.5);
@@ -388,4 +394,29 @@ button {
   padding: 10px 10px;
   margin-top: 15px;
   width: 100%;
+}
+
+.container-ProdsRelated {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+}
+
+.container-ProdsRelated .list-group-item {
+  max-width: 20%; /* Limita el ancho máximo para que no crezca demasiado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.container-ProdsRelated .img-thumbnail {
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 5px;
+}
+
+.container-ProdsRelated h4 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
 }
