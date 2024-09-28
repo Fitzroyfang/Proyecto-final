@@ -9,7 +9,13 @@ document.addEventListener('DOMContentLoaded', function(){
             location.href="login.html";
         }
         
-        else {
-            document.getElementById('usuarioLoggeado').textContent = usuario;
-            }
+        else if (document.getElementById('usuario-index') != null) {
+            document.getElementById('usuario-index').textContent = usuario; //cambio id
+        } else if (document.getElementById('usuario-categories') != null) {
+            document.getElementById('usuario-categories').textContent = usuario
+        } else if (document.getElementById('usuario-products') != null) {
+            document.getElementById('usuario-products').textContent = usuario
+        } else {
+            document.getElementById('usuario-products-info').textContent = usuario
+        }
 })
