@@ -324,6 +324,7 @@ a.custom-card:hover {
     max-width: 90%; 
     padding: 15px; 
   }
+}
 
   .login-data {
     margin-bottom: 10px; 
@@ -349,3 +350,42 @@ a.custom-card:hover {
     max-width: 400px; 
   }
  }
+
+ #emoji-puntuacion {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.emoji {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.emoji:hover {
+  opacity: 0.5;
+}
+
+.emoji:active {
+  opacity: 1;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px;
+}
+
+button {
+  background-color: #01213b;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 10px;
+  margin-top: 15px;
+  width: 100%;
+}
