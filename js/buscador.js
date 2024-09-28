@@ -19,7 +19,7 @@ inputSearch.onkeyup = e => {
         
         emptyArray = emptyArray.map(data => {
             return (`<li>
-                        <a href="#${data.id}">
+                        <a href="product-info.html?prodID=${data.prodID}">
                             <strong>${data.name}</strong> 
                             <p>${data.description}</p>
                         </a>
