@@ -106,33 +106,30 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <a class="nav-item" href="login.html" id="usuario-products-info">Iniciar sesión</a>
+            <a class="nav-item" href="login.html" id="usuario-products">Iniciar sesión</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container" id="container-prod-info"></div>
-    <div class="container-Img row justify-content-between" id="galeria-imagenes"></div>
-    
-   
-
-    <div id="emoji-puntuacion">
-      <span class="emoji" data-emoji="😠">😠</span>
-      <span class="emoji" data-emoji="😕">😕</span>
-      <span class="emoji" data-emoji="😐">😐</span>
-      <span class="emoji" data-emoji="😊">😊</span>
-      <span class="emoji" data-emoji="😄">😄</span>
+  <main class="pb-5 container">
+  <div id="sorting" class="container">
+    <div id="orden" class="container pb-2 d-flex justify-content-end">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="precioDesc"> <i class="fas fa-sort-amount-down"></i> $</button>
+        <button type="button" class="btn btn-default" id="precioAsc"> <i class="fas fa-sort-amount-up"></i> $</button>
+        <button type="button" class="btn btn-default" id="relDesc"> <i class="fas fa-sort-amount-down"></i> Rel.</button>
+      </div>
     </div>
-
-    <div class="container">
-      <h2>¡Tu experiencia nos ayuda a mejorar!</h2>
-      <textarea placeholder="Deja tu reseña aquí..." rows="3"></textarea>
-      <button type="button">Enviar</button>
+    <div id="filtros" class="container d-flex justify-content-end">
+      <p>Precio: <input type="number" placeholder="min" id="min"> a <input type="number" placeholder="máx" id="max">
+      <button type="button" class="btn btn-default" id="filtrar">Filtrar</button>
+      <button type="button" class="btn btn-link" id="limpiar">Limpiar</button></p>
     </div>
-    <h3>Productos relacionados</h3>
-    <div class="container-ProdsRelated row justify-content-center" id="productos-relacionados"></div>
+  </div>
+    <div id="cat-list-container">
+      
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -152,11 +149,10 @@
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/checklogin.js"></script>
 
   <script src="js/buscador.js"></script>
-
-  <script src="js/checklogin.js"></script>
 
 </body>
 

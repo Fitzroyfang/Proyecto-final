@@ -7,7 +7,6 @@
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
@@ -19,13 +18,18 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="search-input-box">
         <input placeholder="Buscar">
+
         <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+
+      <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+
         <i class="fa-solid fa-magnifying-glass searchIcon"></i>
       <ul class="container-suggestions">
         <li>
-          <a href="categories.html" <strong>Chevrolet Onix Joy</strong>
+          <a href="categories.html"<strong>Chevrolet Onix Joy</strong>
           <p>Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.</p>
           </a>
         </li>
@@ -94,10 +98,12 @@
       </div>
         <script src="js/suggestions.js"></script>
         <script src="js/buscador.js"></script>
+       
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link active" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -106,33 +112,53 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <a class="nav-item" href="login.html" id="usuario-products-info">Iniciar sesión</a>
+            <a class="nav-item" href="login.html" id="usuario-index">Iniciar sesión</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container" id="container-prod-info"></div>
-    <div class="container-Img row justify-content-between" id="galeria-imagenes"></div>
-    
-   
-
-    <div id="emoji-puntuacion">
-      <span class="emoji" data-emoji="😠">😠</span>
-      <span class="emoji" data-emoji="😕">😕</span>
-      <span class="emoji" data-emoji="😐">😐</span>
-      <span class="emoji" data-emoji="😊">😊</span>
-      <span class="emoji" data-emoji="😄">😄</span>
+    <div class="jumbotron text-center"></div>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
+              <img class="bd-placeholder-img card-img-top" src="img/cars_index.jpg"
+                alt="Imagen representativa de la categoría 'Autos'">
+              <h3 class="m-3">Autos</h3>
+              <div class="card-body">
+                <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm custom-card cursor-active" id="juguetes">
+              <img class="bd-placeholder-img card-img-top" src="img/toys_index.jpg"
+                alt="Imagen representativa de la categoría 'Juguetes'">
+              <h3 class="m-3">Juguetes</h3>
+              <div class="card-body">
+                <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm custom-card cursor-active" id="muebles">
+              <img class="bd-placeholder-img card-img-top" src="img/furniture_index.jpg"
+                alt="Imagen representativa de la categoría 'Muebles'">
+              <h3 class="m-3">Muebles</h3>
+              <div class="card-body">
+                <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <a class="btn btn-light btn-lg btn-block" href="categories.html">Y mucho más!</a>
+        </div>
+      </div>
     </div>
-
-    <div class="container">
-      <h2>¡Tu experiencia nos ayuda a mejorar!</h2>
-      <textarea placeholder="Deja tu reseña aquí..." rows="3"></textarea>
-      <button type="button">Enviar</button>
-    </div>
-    <h3>Productos relacionados</h3>
-    <div class="container-ProdsRelated row justify-content-center" id="productos-relacionados"></div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -142,22 +168,10 @@
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
-
-  <script src="js/buscador.js"></script>
-
   <script src="js/checklogin.js"></script>
-
 </body>
 
 </html>
