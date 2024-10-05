@@ -335,7 +335,7 @@ a.custom-card:hover {
   .login-data {
     margin-bottom: 10px; 
   }
-}
+
 
 /* Tablet (576px a 768px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -375,6 +375,10 @@ a.custom-card:hover {
 
 .emoji:active {
   opacity: 1;
+}
+
+.emoji.selected {
+  transform: scale(1.2);
 }
 
 h2 {
