@@ -100,77 +100,63 @@
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
+            <a class="nav-link active" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <a class="nav-item" href="login.html" id="usuario-products-info">Iniciar sesión</a>
+            <a class="nav-item" href="login.html" id="usuario-categories">Iniciar sesión</a>
           </li>
+          
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container" id="container-prod-info"></div>
-<<<<<<< HEAD
-    <div class="container row justify-content-between" id="galeria-imagenes"></div>
-
-
+  <main class="pb-5">
+    <div class="text-center p-4">
+      <h2>Categorías</h2>
+      <p class="lead">Verás aquí todas las categorías del sitio.</p>
+    </div>
     <div class="container">
-      
-      <div id="emoji-puntuacion">
-            <span class="emoji" data-emoji="😠">😠</span>
-            <span class="emoji" data-emoji="😕">😕</span>
-            <span class="emoji" data-emoji="😐">😐</span>
-            <span class="emoji" data-emoji="😊">😊</span>
-            <span class="emoji" data-emoji="😄">😄</span>
+      <div class="row">
+        <div class="col text-end">
+          <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+            <input type="radio" class="btn-check" name="options" id="sortAsc">
+            <label class="btn btn-light" for="sortAsc">A-Z</label>
+            <input type="radio" class="btn-check" name="options" id="sortDesc">
+            <label class="btn btn-light" for="sortDesc">Z-A</label>
+            <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
+            <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
           </div>
-
-          
-    
-      <h2>¡Tu experiencia nos ayuda a mejorar!</h2>
-      <div class="submit-container">
-        <textarea id="textArea" placeholder="Deja tu reseña aquí..." rows="3"></textarea>
-            <button type="button" id="submit-rating" onclick="submitEmojiRating()">Enviar</button>
         </div>
-      
-        <!-- Listado de reseñas -->
-        <div class="reviews">
-            <h2>Reseñas del Producto</h2>
-            <div id="review-list">
-                <p class="no-reviews">Aún no hay reseñas. ¡Sé el primero en calificar!</p>
-                
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-end my-2">Cant.</p>
             </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+              </div>
+            </div>
+          </div>
         </div>
-    <script src="js/rating.js"></script>
-    <h3>Productos relacionados</h3>
-    <div class="container-ProdsRelated row justify-content-center" id="productos-relacionados"></div>
-  
-
-
-=======
-    <div class="container-Img row justify-content-between" id="galeria-imagenes"></div>
-    
-   
-
-    <div id="emoji-puntuacion">
-      <span class="emoji" data-emoji="😠">😠</span>
-      <span class="emoji" data-emoji="😕">😕</span>
-      <span class="emoji" data-emoji="😐">😐</span>
-      <span class="emoji" data-emoji="😊">😊</span>
-      <span class="emoji" data-emoji="😄">😄</span>
+      </div>
+      <div class="row">
+        <div class="list-group" id="cat-list-container">
+        </div>
+      </div>
     </div>
-
-    <div class="container">
-      <h2>¡Tu experiencia nos ayuda a mejorar!</h2>
-      <textarea placeholder="Deja tu reseña aquí..." rows="3"></textarea>
-      <button type="button">Enviar</button>
-    </div>
-    <h3>Productos relacionados</h3>
-    <div class="container-ProdsRelated row justify-content-center" id="productos-relacionados"></div>
->>>>>>> 680314ef815e91e19dae2bb74ddd90163428f466
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -190,18 +176,8 @@
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
-<<<<<<< HEAD
-  <script src="js/buscador.js"></script>
+  <script src="js/categories.js"></script>
   <script src="js/checklogin.js"></script>
-=======
-
-  <script src="js/buscador.js"></script>
-
-  <script src="js/checklogin.js"></script>
-
 </body>
->>>>>>> 78b4758c62d7c117fdd91237c9d4f6f55462acd2
 
-</body>
 </html>

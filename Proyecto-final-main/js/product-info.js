@@ -14,35 +14,6 @@ function showProductinfo(array) {
             `
             document.getElementById("container-prod-info").innerHTML = htmlContentToAppend;
 }
-function setProdID(id) {
-    localStorage.setItem("prodID", id);
-    window.location = "product-info.html"
-}
-
-function showRelatedProducts(array){
-    let htmlContentToAppend = "";
-    
-    array.relatedProducts.forEach(product => {
-        htmlContentToAppend += 
-        `
-        <div onclick="setProdID(${product.id})" class="list-group-item list-group-item-action">
-            <div class="col">
-                <div">
-                    <img src="` + product.image + `" alt="product image" class="img-thumbnail">
-                </div>
-                <div>
-                    <div class="d-flex w-100 justify-content-between">
-                        <div class="mb-1">
-                        <h4>${product.name}</h4> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        `
-    });
-            document.getElementById("productos-relacionados").innerHTML = htmlContentToAppend;
-}
 function showProductimages (array) {
             let imagesToAppend = "";
         let images = array.images;
@@ -68,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 data = resultObj.data;
                 showProductinfo(data);
                 showProductimages(data);
-                showRelatedProducts(data)
             }
         });
     }
