@@ -115,6 +115,40 @@
   <main>
     <div class="container" id="container-prod-info"></div>
     <div class="container row justify-content-between" id="galeria-imagenes"></div>
+
+
+    <div class="container">
+      
+      <div id="emoji-puntuacion">
+            <span class="emoji" data-emoji="😠">😠</span>
+            <span class="emoji" data-emoji="😕">😕</span>
+            <span class="emoji" data-emoji="😐">😐</span>
+            <span class="emoji" data-emoji="😊">😊</span>
+            <span class="emoji" data-emoji="😄">😄</span>
+          </div>
+
+          
+    
+      <h2>¡Tu experiencia nos ayuda a mejorar!</h2>
+      <div class="submit-container">
+        <textarea id="textArea" placeholder="Deja tu reseña aquí..." rows="3"></textarea>
+            <button type="button" id="submit-rating" onclick="submitEmojiRating()">Enviar</button>
+        </div>
+      
+        <!-- Listado de reseñas -->
+        <div class="reviews">
+            <h2>Reseñas del Producto</h2>
+            <div id="review-list">
+                <p class="no-reviews">Aún no hay reseñas. ¡Sé el primero en calificar!</p>
+                
+            </div>
+        </div>
+    <script src="js/rating.js"></script>
+    <h3>Productos relacionados</h3>
+    <div class="container-ProdsRelated row justify-content-center" id="productos-relacionados"></div>
+  
+
+
   </main>
   <footer class="text-muted">
     <div class="container">
