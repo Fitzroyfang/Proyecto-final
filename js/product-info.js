@@ -58,6 +58,37 @@ function showProductimages (array) {
         document.getElementById("galeria-imagenes").innerHTML = imagesToAppend;
     }
 
+function showReviews(array) {
+    let htmlContentToAppend = "";
+    console.log(array)
+    array.forEach(element => {
+        htmlContentToAppend +=
+            `<div class="container border p-3">
+            <div class="row align-items-center">
+            <div class="col-lg-2">
+                <p class="fs-6"><strong>Usuario</strong></p>
+                <p>${element.user}</p>
+            </div>
+            <div class="col-2 ">
+                <p class="fs-6"><strong>Calificación</strong></p>
+                <p>${element.score}</p>
+            </div>
+            <div class="col-lg-2">
+                <p class="fs-6"><strong>Fecha</strong></p>
+                <p>${element.dateTime}</p>
+            </div>
+            <div class="col-lg-6">
+                <p class="fs-6"><strong>Comentario</strong></p>
+                <p>${element.description}</p>
+            </div>
+            </div>
+            </div>
+            `
+    })
+
+    document.getElementById("review-list").innerHTML = htmlContentToAppend;
+}
+
 document.addEventListener("DOMContentLoaded", function (e) {
     const prodID = localStorage.getItem("prodID");
     if (prodID) {
@@ -71,6 +102,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 showRelatedProducts(data)
             }
         });
-    }
+        const URL2 = `https://japceibal.github.io/emercado-api/products_comments/${prodID}.json`
+
+        getJSONData(URL2).then(function (resultObj) {
+            if (resultObj.status === "ok") {
+                data = resultObj.data;
+                showReviews(data);
+            }
+    })
+}
 
 });
