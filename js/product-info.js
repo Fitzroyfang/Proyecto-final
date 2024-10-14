@@ -58,6 +58,30 @@ function showProductimages (array) {
         document.getElementById("galeria-imagenes").innerHTML = imagesToAppend;
     }
 
+function convertirCalificacionEnCarita(score) {
+    let emoji = '';
+    switch (score) {
+        case 1:
+            emoji = '😠'; // Muy mala
+            break;
+        case 2:
+            emoji = '😞'; // Mala
+            break;
+        case 3:
+            emoji = '😐'; // Neutral
+            break;
+        case 4:
+            emoji = '😊'; // Buena
+            break;
+        case 5:
+            emoji = '😁'; // Excelente
+            break;
+        default:
+            emoji = '🤔'; // Indefinido o sin calificación
+    }
+    return emoji;
+}
+
 function showReviews(array) {
     let htmlContentToAppend = "";
     console.log(array)
@@ -71,7 +95,7 @@ function showReviews(array) {
             </div>
             <div class="col-2 ">
                 <p class="fs-6"><strong>Calificación</strong></p>
-                <p>${element.score}</p>
+                <p>${convertirCalificacionEnCarita(element.score)}</p>
             </div>
             <div class="col-lg-2">
                 <p class="fs-6"><strong>Fecha</strong></p>
