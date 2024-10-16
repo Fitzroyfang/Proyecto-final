@@ -9,7 +9,13 @@ document.addEventListener('DOMContentLoaded', function(){
             location.href="login.html";
         }
         
-        else if (document.getElementById('usuario-index') != null) {
+        else {
+            document.querySelectorAll(".usuario").forEach(elemento => {
+                elemento.textContent = usuario;
+            })
+        }
+    })
+        /*if (document.getElementById('usuario-index') != null) {
             document.getElementById('usuario-index').textContent = usuario; //cambio id
         } else if (document.getElementById('usuario-categories') != null) {
             document.getElementById('usuario-categories').textContent = usuario
@@ -18,4 +24,4 @@ document.addEventListener('DOMContentLoaded', function(){
         } else {
             document.getElementById('usuario-products-info').textContent = usuario
         }
-})
+})*/
