@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadProfileData() {
         const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
+        
+        const emailField = document.getElementById('email');
+        if (emailField) {
+            emailField.value = user;
+        }
+
 
         // Rellenar el campo de correo con el email del usuario logueado
         const emailField = document.getElementById('email');
