@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Evento para desactivar el modo oscuro
     btnSwitch2.addEventListener('change', () => {
         document.body.classList.toggle('dark-mode', btnSwitch2.checked);
-        btnSwitch.checked = false; // Desactivar el otro switch
+        btnSwitch.checked = false; // Desactivar el switch
         // Guardar estado del switch en localStorage
         localStorage.setItem('dark-mode', btnSwitch2.checked ? 'disabled' : 'enabled');
     });
