@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.getElementById('btn-inicio').addEventListener('click', login);
+document.getElementById('btn-inicio').addEventListener('click', (e) => {
+  login();
+});
 
 
 document.getElementById("password").addEventListener('keydown', (e) => {
