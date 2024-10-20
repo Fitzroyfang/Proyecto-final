@@ -427,6 +427,79 @@ button {
 }
 
 .profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.img-switch {
+  width: 40px; 
+  height: 40px;
+  display: inline-block; 
+  cursor: pointer;
+  padding: 5px;
+}
+
+#profilePic {
+  border-radius: 20px;
+  width: 300px;
+  height: 300px;
+  
+}
+
+body {
+  background-color: white; 
+  color: black;  
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+body.dark-mode {
+  background-color: #343a40;
+  color: white; 
+}
+
+#btnSwitch {
+  display: none;
+}
+
+#btnSwitch2 {
+  display: none;
+}
+
+
+#profilePic {
+  padding: 10px;
+}
+
+
+#saveBtn {
+  border-radius: 20px;
+}
+
+.container-profile {
+  padding: 4rem;
+}
+
+
+
+
+.profile-pic {
   max-width: 100px;
   max-height: 100px;
   margin-right: 20px ;
