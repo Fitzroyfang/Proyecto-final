@@ -426,6 +426,7 @@ button {
   text-align: center;
 }
 
+<<<<<<< HEAD
   body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -497,3 +498,82 @@ button {
   color: black;
   font-weight: bold;
 }
+=======
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.img-switch {
+  width: 40px; 
+  height: 40px;
+  display: inline-block; 
+  cursor: pointer;
+  padding: 5px;
+}
+
+#profilePic {
+  border-radius: 20px;
+  width: 300px;
+  height: 300px;
+  
+}
+
+body {
+  background-color: white; 
+  color: black;  
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+body.dark-mode {
+  background-color: #343a40;
+  color: white; 
+}
+
+#btnSwitch {
+  display: none;
+}
+
+#btnSwitch2 {
+  display: none;
+}
+
+
+#profilePic {
+  padding: 10px;
+}
+
+
+#saveBtn {
+  border-radius: 20px;
+}
+
+.container-profile {
+  padding: 4rem;
+}
+
+#profilePic {
+    max-width: 80px;
+    max-height: 80px;
+    margin-left: 15px;
+    object-fit: contain;
+}
+
+>>>>>>> d2c367796b58a19d4b68bf86e301921b5a476ccc

@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
+<<<<<<< HEAD
 
     if(localStorage.getItem('darkMode') === 'true'){
         document.body.classList.toggle('dark-mode');
@@ -27,3 +28,6 @@ function ChangeMode() {
         document.body.classList.toggle('dark-mode');
     }    
 }
+=======
+});
+>>>>>>> d2c367796b58a19d4b68bf86e301921b5a476ccc
