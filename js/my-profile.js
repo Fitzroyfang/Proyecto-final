@@ -1,33 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     const btnSwitch = document.getElementById('btnSwitch');  
     const btnSwitch2 = document.getElementById('btnSwitch2'); 
-    const darkMode = localStorage.getItem('dark-mode'); // Obtener el valor de localStorage 
+    const darkMode = localStorage.getItem('dark-mode'); 
     const profilePicInput = document.getElementById('profilePicInput'); 
-    const profilePic = document.getElementById('profilePic');
+    const profilePic = document.getElementById('profilePic'); // Imagen en la barra de navegación superior
+    const profilePic2 = document.getElementById('profilePic2'); // Imagen del logo azul (parte del perfil)
     const saveBtn = document.getElementById('saveBtn');
 
     // Verificar el login
-    const user = sessionStorage.getItem('user'); // Cambiado para obtener el usuario del localStorage
+    const user = sessionStorage.getItem('user');
     if (!user) {
         window.location.href = "login.html";
     }
 
-    // Cargar datos del perfil 
+    // Cargar datos del perfil
     loadProfileData();
 
     // Evento para activar el modo oscuro
     btnSwitch.addEventListener('change', () => {
         document.body.classList.toggle('dark-mode', btnSwitch.checked);
         btnSwitch2.checked = false; // Desactivar el otro switch
-        // Guardar estado del switch en localStorage
         localStorage.setItem('dark-mode', btnSwitch.checked ? 'enabled' : 'disabled');
     });
 
     // Evento para desactivar el modo oscuro
     btnSwitch2.addEventListener('change', () => {
         document.body.classList.toggle('dark-mode', btnSwitch2.checked);
-        btnSwitch.checked = false; // Desactivar el otro switch
-        // Guardar estado del switch en localStorage
+        btnSwitch.checked = false; 
         localStorage.setItem('dark-mode', btnSwitch2.checked ? 'disabled' : 'enabled');
     });
 
@@ -37,66 +36,64 @@ document.addEventListener('DOMContentLoaded', function() {
         if (file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                profilePic.src = e.target.result;
-                localStorage.setItem('profilePic', e.target.result);
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+              
+const imageDataUrl = e.target.result;
+profilePic.src = imageDataUrl; // Actualizar imagen en la barra de navegación superior
+profilePic2.src = imageDataUrl; // Actualizar imagen en la sección de perfil (logo azul)
+localStorage.setItem('profilePic', imageDataUrl); // Guardar la imagen en localStorage
+};
+reader.readAsDataURL(file);
+}
+});
+        
 
     // Guardar datos del perfil
     document.getElementById('profile-form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita la recarga de la página
+        e.preventDefault(); 
         saveProfileData();
     });
 
+    // Cargar los datos del perfil
     function loadProfileData() {
         const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
         
+const emailField = document.getElementById('email');
+    if (emailField) {
+        emailField.value = profileData.email || ''; // Usar email de localStorage si está disponible
+    }
 
-
-
-        // Rellenar el campo de correo con el email del usuario logueado
-        const emailField = document.getElementById('email');
-        if (emailField) {
-            emailField.value = user; // Cargar el email desde localStorage
-        }
-
-        // Vaciar otros campos
-        const otherFields = ['name', 'name2', 'surname', 'surname2', 'phone']; // IDs de otros campos
+        const otherFields = ['name', 'name2', 'surname', 'surname2', 'phone']; 
         otherFields.forEach(fieldId => {
             const inputElement = document.getElementById(fieldId);
             if (inputElement) {
-                inputElement.value = ''; // Asegurarse de que estén vacíos
+                inputElement.value = ''; 
             }
         });
 
         // Cargar la imagen de perfil
-        profilePic.src = localStorage.getItem('profilePic') || 'img/user-account-no-bg.png';
-    }
-
-    function loadProfileData() {
         const savedImage = localStorage.getItem('profilePic');
         if (savedImage) {
-            profilePic.src = savedImage;
+            profilePic.src = savedImage; // Cargar imagen guardada (barra de navegación superior)
+            profilePic2.src = savedImage; // Cargar imagen guardada en la sección de perfil (logo azul)
         } else {
-            profilePic.src =  'img/user-account-no-bg.png';
+            profilePic.src = 'img/user-account-no-bg.png';
+            profilePic2.src = 'img/user-account-no-bg.png';
         }
     }
 
+    // Guardar datos del perfil
     function saveProfileData() {
         const profileData = {
-            nombre: document.getElementById('name').value,
-            segundoNombre: document.getElementById('name2').value,
-            apellido: document.getElementById('surname').value,
-            segundoApellido: document.getElementById('surname2').value,
-            telefono: document.getElementById('phone').value,
-            correo: document.getElementById('email').value // Incluyendo el correo
+            name: document.getElementById('name').value,
+            name2: document.getElementById('name2').value,
+            surname: document.getElementById('surname').value,
+            surname2: document.getElementById('surname2').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value
         };
-        
-        // Guardar los datos en localStorage
+
         localStorage.setItem('profileData', JSON.stringify(profileData));
-        alert('Datos del perfil guardados correctamente.');
+        alert('Datos guardados correctamente.');
     }
 });
 
@@ -110,6 +107,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   }
-
-
 
