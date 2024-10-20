@@ -36,14 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                const imageDataUrl = e.target.result;
-                profilePic.src = imageDataUrl; // Actualizar imagen en la barra de navegación superior
-                profilePic2.src = imageDataUrl; // Actualizar imagen en la sección de perfil (logo azul)
-                localStorage.setItem('profilePic', imageDataUrl); // Guardar la imagen en localStorage
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+              
+const imageDataUrl = e.target.result;
+profilePic.src = imageDataUrl; // Actualizar imagen en la barra de navegación superior
+profilePic2.src = imageDataUrl; // Actualizar imagen en la sección de perfil (logo azul)
+localStorage.setItem('profilePic', imageDataUrl); // Guardar la imagen en localStorage
+};
+reader.readAsDataURL(file);
+}
+});
+        
 
     // Guardar datos del perfil
     document.getElementById('profile-form').addEventListener('submit', function(e) {
@@ -55,10 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadProfileData() {
         const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
         
-        const emailField = document.getElementById('email');
-        if (emailField) {
-            emailField.value = user; 
-        }
+const emailField = document.getElementById('email');
+    if (emailField) {
+        emailField.value = profileData.email || ''; // Usar email de localStorage si está disponible
+    }
 
         const otherFields = ['name', 'name2', 'surname', 'surname2', 'phone']; 
         otherFields.forEach(fieldId => {
@@ -94,3 +96,15 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Datos guardados correctamente.');
     }
 });
+
+// Evento para el botón de guardar la imagen
+  if (saveBtn) {
+    saveBtn.addEventListener('click', function () {
+    if (profilePic) {
+      saveImage(profilePic);
+    } else {
+      alert("Por favor, seleccione una imagen");
+    }
+  });
+  }
+
