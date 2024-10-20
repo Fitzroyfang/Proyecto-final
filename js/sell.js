@@ -28,6 +28,10 @@ function updateTotalCosts(){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+    if(localStorage.getItem('darkMode') === 'true'){
+        document.body.classList.toggle('dark-mode');
+    }
+
     document.getElementById("productCountInput").addEventListener("change", function(){
         productCount = this.value;
         updateTotalCosts();
@@ -147,3 +151,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+function ChangeMode() {
+    if(localStorage.getItem('darkMode') === 'true'){
+        localStorage.setItem('darkMode',"")
+        document.body.classList.remove('dark-mode');
+    }else{
+        localStorage.setItem("darkMode",'true')
+        document.body.classList.toggle('dark-mode');
+    }    
+}
