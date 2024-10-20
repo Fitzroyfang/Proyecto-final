@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const darkMode = localStorage.getItem('dark-mode'); // Obtener el valor de localStorage 
     const profilePicInput = document.getElementById('profilePicInput'); 
     const profilePic = document.getElementById('profilePic');
+    const saveBtn = document.getElementById('saveBtn');
 
     // Verificar el login
     const user = sessionStorage.getItem('user'); // Cambiado para obtener el usuario del localStorage
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.onload = function(e) {
                 profilePic.src = e.target.result;
                 localStorage.setItem('profilePic', e.target.result);
+                localStorage.setItem('savedImage', e.target.result);
             };
             reader.readAsDataURL(file);
         }
@@ -71,6 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
         profilePic.src = localStorage.getItem('profilePic') || 'img/user-account-no-bg.png';
     }
 
+    function loadProfileData() {
+        const savedImage = localStorage.getItem('profilePic');
+        if (savedImage) {
+            profilePic.src = savedImage;
+        } else {
+            profilePic.src =  'img/user-account-no-bg.png';
+        }
+    }
+
     function saveProfileData() {
         const profileData = {
             nombre: document.getElementById('name').value,
@@ -87,15 +98,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function displayImage () {
-    const savedImage = localStorage.getItem('savedImage');
-    if (savedImage) {
-      document.getElementById('imagePreview').src = savedImage; // Muestra la imagen
-      console.log("Imagen cargada desde localStorage", savedImage);
+// Evento para el botón de guardar la imagen
+  if (saveBtn) {
+    saveBtn.addEventListener('click', function () {
+    if (profilePic) {
+      saveImage(profilePic);
     } else {
-      console.error("No se encontró la imagen en localStorage");
+      alert("Por favor, seleccione una imagen");
     }
+  });
   }
+
   
   window.onload = displayImage;
 

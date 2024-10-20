@@ -496,4 +496,10 @@ body.dark-mode {
   padding: 4rem;
 }
 
+#profilePic {
+    max-width: 80px;
+    max-height: 80px;
+    margin-left: 15px;
+    object-fit: contain;
+}
 
