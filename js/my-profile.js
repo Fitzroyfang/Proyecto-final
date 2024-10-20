@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const darkMode = localStorage.getItem('dark-mode'); // Obtener el valor de localStorage 
     const profilePicInput = document.getElementById('profilePicInput'); 
     const profilePic = document.getElementById('profilePic');
+    const saveBtn = document.getElementById('saveBtn');
 
     // Verificar el login
-    const user = sessionStorage.getItem('user'); // Cambiado para obtener el usuario del localStorage
+    const user = sessionStorage.getItem('user'); 
     if (!user) {
         window.location.href = "login.html";
     }
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.onload = function(e) {
                 profilePic.src = e.target.result;
                 localStorage.setItem('profilePic', e.target.result);
+                localStorage.setItem('savedImage', e.target.result);
             };
             reader.readAsDataURL(file);
         }
@@ -71,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         profilePic.src = localStorage.getItem('profilePic') || 'img/user-account-no-bg.png';
     }
 
+    
     function saveProfileData() {
         const profileData = {
             nombre: document.getElementById('name').value,
