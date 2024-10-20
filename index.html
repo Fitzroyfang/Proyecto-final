@@ -95,17 +95,26 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
+          <li>
+            <button  onclick="ChangeMode()">Cambiar Modo</button>
+          </li>
           <li class="nav-item">
-            <a class="nav-item usuario" href="my-profile.html" id="usuario-index">Iniciar sesión</a>
+            <a class="nav-item usuario dropdown-toggle" href="my-profile.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuario-index">Iniciar sesión</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
+            </ul>
           </li>
         </ul>
-        <img alt="Foto de perfil" class="profile-pic" id="imagePreview">
+        <img id="profilePic" alt="Foto de perfil" class="profile-Pic">
       </div>
     </div>
   </nav>
   <main>
     <div class="jumbotron text-center"></div>
-    <div class="album py-5 bg-light">
+
+    <div class="album my-5 bg-light">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
