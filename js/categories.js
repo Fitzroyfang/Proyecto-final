@@ -96,6 +96,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 
+    if(localStorage.getItem('darkMode') === 'true'){
+        document.body.classList.toggle('dark-mode');
+    }
+
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowCategories(ORDER_ASC_BY_NAME);
     });
@@ -141,3 +145,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+function ChangeMode() {
+    if(localStorage.getItem('darkMode') === 'true'){
+        localStorage.setItem('darkMode',"")
+        document.body.classList.remove('dark-mode');
+    }else{
+        localStorage.setItem("darkMode",'true')
+        document.body.classList.toggle('dark-mode');
+    }    
+}
