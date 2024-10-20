@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const profilePic = document.getElementById('profilePic');
 
     // Verificar el login
-    const user = sessionStorage.getItem('user');
+    const user = sessionStorage.getItem('user'); // Cambiado para obtener el usuario del localStorage
     if (!user) {
         window.location.href = "login.html";
     }
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Evento para desactivar el modo oscuro
     btnSwitch2.addEventListener('change', () => {
         document.body.classList.toggle('dark-mode', btnSwitch2.checked);
-        btnSwitch.checked = false; // Desactivar el switch
+        btnSwitch.checked = false; // Desactivar el otro switch
         // Guardar estado del switch en localStorage
         localStorage.setItem('dark-mode', btnSwitch2.checked ? 'disabled' : 'enabled');
     });
@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Datos del perfil guardados correctamente.');
     }
 });
+
 function displayImage () {
     const savedImage = localStorage.getItem('savedImage');
     if (savedImage) {
@@ -97,3 +98,4 @@ function displayImage () {
   }
   
   window.onload = displayImage;
+
