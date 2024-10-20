@@ -1,30 +1,30 @@
-function login () {
-    let user = document.getElementById('usuario').value;
-    let pass = document.getElementById('password').value;
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('btn-inicio').addEventListener('click', () => {
+        let emailField = document.getElementById('usuario');
+        let pass = document.getElementById('password').value;
+
+        if (emailField.checkValidity() && pass !== '') {
+            sessionStorage.setItem("user", emailField.value);
+            location.href = "index.html";
+        } else if (!emailField.checkValidity() && pass !== '') {
+            alert("Por favor ingrese un correo electrónico válido");
+        } else if (emailField.checkValidity() && pass === '') {
+            alert("Por favor ingrese su contraseña");
+        } else {
+            alert("Por favor ingrese su correo electrónico y contraseña");
+        }
+    });
+});
 
 
-    if (user != '' && pass != '') {
-        sessionStorage.setItem("user", user);
-        location.href = "index.html"
-    } else if (user === '' && pass != '') {
-        alert("Por favor ingrese usuario")
-    } else if (user != '' && pass === '') {
-        alert("Por favor ingrese contraseña")
-    } else {
-        alert("Por favor ingrese usuario y contraseña")
-    }
-} 
+document.getElementById('btn-inicio').addEventListener('click', login);
 
 
-document.getElementById('btn-inicio').addEventListener('click', function (e) {
- login ();
-})
-
-document.getElementById("password").addEventListener('keydown', function (e) {
-    if (e.key==="Enter"){
+document.getElementById("password").addEventListener('keydown', (e) => {
+    if (e.key === "Enter") {
         login();
     }
-})
+});
 
 const imageInput = document.getElementById('imageInput');
 
@@ -65,3 +65,4 @@ function saveImage(file) {
 
 
 window.onload = displayImage;
+

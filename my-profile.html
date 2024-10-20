@@ -8,22 +8,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh60/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2a==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -33,6 +19,69 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="search-input-box">
+        <input placeholder="Buscar">
+        <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+        <i class="fa-solid fa-magnifying-glass searchIcon"></i>
+      <ul class="container-suggestions">
+        <li>
+          <a href="categories.html"><strong>Chevrolet Onix Joy</strong></a>
+          <p>Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Fiat Way</strong></a>
+          <p>La versión de Fiat que brinda confort y a un precio accesible.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Suzuki Celerio</strong></a>
+            <p>Un auto que se ha ganado la buena fama por su economía con el combustible.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Peugeot 208</strong></a>
+            <p>El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Bugatti Chiro</strong></a>
+            <p>El mejor hiperdeportivo de mundo. Producción limitada a 500 unidades.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Oso de Peluche</strong></a>
+            <p>Oso de peluche gigante, con el bebé. Resistente y lavable. Tus hijos lo amarán.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Pelota de Básquetbol</strong></a>
+            <p>Balón de baloncesto profesional, para interiores, tamaño 5, 27.5 pulgadas. Oficial de la NBA.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Playstation 5</strong></a>
+            <p>Maravíllate con increíbles gráficos y disfruta de nuevas funciones de PS5. Con E/S integrada.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Bicicleta</strong></a>
+            <p>¡La mejor BMX pequeña del mercado! Frenos traseros y cuadro duradero de acero Hi-Ten.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Juego de Comedor</strong></a>
+            <p>Un conjunto sencillo y sólido, ideal para zonas de comedor pequeñas, hecho en madera maciza de pino.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Sofá</strong></a>
+            <p>Cómodo sofá de tres cuerpos, con chaiselongue intercambiable. Ideal para las siestas.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Armario</strong></a>
+            <p>Diseño clásico con puertas con forma de panel. Espejo de cuerpo entero para ver cómo te queda la ropa.</p>
+        </li>
+        <li>
+          <a href="categories.html"><strong>Mesa de Centro</strong></a>
+            <p>Añade más funciones a tu sala de estar, ya que te permite cambiar fácilmente de actividad.</p>
+        </li>
+    </ul>
+        
+      </div>
+        <script src="js/suggestions.js"></script>
+        <script src="js/buscador.js"></script>
+        
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
@@ -44,24 +93,75 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <a class="nav-item usuario dropdown-toggle" href="login.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuario-profile">Iniciar sesión</a>
+          <a class="nav-item">
+              <a class="nav-item usuario dropdown-toggle" href="my-profile.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuario-index">Iniciar sesión</a></a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
             </ul>
         </ul>
-        <img id="imagePreview" alt="Foto de perfil" class="profile-pic">
+        <img id="profilePic" alt="Foto de perfil" class="profile-Pic">
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container-profile">
+      
+      <div class="row">
+        <!-- Columna 1 -->
+        <div class="col-md-6">
+          <h2>Foto de Perfil</h2>
+          <label class="form-label"></label>
+          <div class="d-flex align-items-center">
+            <img src="img/user-account-no-bg.png" alt="Foto de perfil" class="profile-pic" id="profilePic">
+          </div>
+          <input type="file" class="form-control" id="profilePicInput" accept="image/*">
+          
+          <!-- Modo oscuro -->
+          <div class="form-check form-switch mt-3">
+            <input type="checkbox" id="btnSwitch">
+            <label for="btnSwitch" id="labelSwitch">
+              <img src="img/moon_15961741.png" alt="Moon icon" class="img-switch">
+            </label>
+            
+            <!-- Modo claro -->
+            <input type="checkbox" id="btnSwitch2">
+            <label class="form-check-label" for="btnSwitch2">
+              <img src="img/sun_869818.png" alt="Sun icon" class="img-switch">
+            </label>
+          </div>
+        </div> 
+      
+        <!-- Columna 2-->
+        <div class="col-md-6">
+          <h2>Mis Datos</h2>
+          <form id="profile-form">
+            <label for="name">Nombre*</label>
+            <input type="text" class="form-control" id="name" required>
+            
+            <label for="name2">Segundo nombre</label>
+            <input type="text" class="form-control" id="name2">
+            
+            <label for="surname">Apellido*</label>
+            <input type="text" class="form-control" id="surname" required>
+            
+            <label for="surname2">Segundo apellido</label>
+            <input type="text" class="form-control" id="surname2">
+            
+            <label for="email">E-mail*</label>
+            <input type="email" class="form-control" id="email" required>
+            
+            <label for="phone">Teléfono</label>
+            <input type="number" class="form-control" id="phone">
+            
+            <button type="submit" class="btn btn-primary mt-3" id="saveBtn">Guardar cambios</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </main>
+      
+</main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -73,7 +173,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
-  <script src="js/my-profile.js"></script>
+  <script src="js/checklogin.js"></script>
 </body>
 
 </html>
