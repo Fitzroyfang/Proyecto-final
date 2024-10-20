@@ -383,7 +383,7 @@ a.custom-card:hover {
 
 h2 {
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 textarea {
@@ -497,3 +497,10 @@ body.dark-mode {
 }
 
 
+
+
+.profile-pic {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 20px ;
+}

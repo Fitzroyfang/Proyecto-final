@@ -31,9 +31,29 @@ var textArea = document.getElementById("textArea");
             const newReview = document.createElement('div');
             newReview.classList.add('review-item');
             newReview.innerHTML = `
-                <div class="review-emoji">${selectedEmoji}</div>
+                <div class="container border p-3">
+            <div class="row align-items-center">
+            <div class="col-lg-2">
+                <p class="fs-6"><strong>Usuario</strong></p>
+                <p>${sessionStorage.getItem("user")}</p>
+            </div>
+            <div class="col-2 ">
+                <p class="fs-6"><strong>Calificación</strong></p>
+                <p>${selectedEmoji}</p>
+            </div>
+            <div class="col-lg-2">
+                <p class="fs-6"><strong>Fecha</strong></p>
+                <p>${new Date()}</p>
+            </div>
+            <div class="col-lg-6">
+                <p class="fs-6"><strong>Comentario</strong></p>
                 <p>${textArea.value}</p>
-            `;
+            </div>
+            </div>
+            </div>`
+
+          
+            ;
         
 
             // Agregar la reseña

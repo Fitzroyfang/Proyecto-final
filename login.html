@@ -95,7 +95,7 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Iniciar sesión</a>
+            <a class="nav-link usuario" href="login.html">Iniciar sesión</a>
           </li>
         </ul>
       </div>
@@ -112,6 +112,13 @@
           <label for="password" class="form-label">Contraseña:</label>
           <input type="password" id="password" class="form-control" placeholder="Ingrese contraseña">
         </div>
+         <!--Sección para elegir imagen-->
+         <div class="mb-3">
+          <label class="form-label">Foto de perfil</label>
+          <div class="d-flex align-items-center">
+            <img alt="Foto de perfil" class="profile-pic" id="imagePreview">
+            <input type="file" class="form-control" id="imageInput" accept="image/*">
+          </div>
         <button type="button" class="btn btn-primary" id="btn-inicio">Iniciar sesión</button>
       </div>
     </div>
