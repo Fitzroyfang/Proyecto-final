@@ -14,6 +14,15 @@ function setProdID(id) {
     localStorage.setItem("prodID", id);
     window.location = "product-info.html"
 }
+function ChangeMode() {
+    if(localStorage.getItem('darkMode') === 'true'){
+        localStorage.setItem('darkMode',"")
+        document.body.classList.remove('dark-mode');
+    }else{
+        localStorage.setItem("darkMode",'true')
+        document.body.classList.toggle('dark-mode');
+    }    
+}
 
 function showCategoriesList(array) {
     let htmlContentToAppend = "";
@@ -46,6 +55,9 @@ function showCategoriesList(array) {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
+    if(localStorage.getItem('darkMode') === 'true'){
+        document.body.classList.toggle('dark-mode');
+    }
     const catID = localStorage.getItem("catID");
     if (catID) {
         const URL = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;

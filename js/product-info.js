@@ -134,6 +134,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 showReviews(data);
             }
     })
+    if(localStorage.getItem('darkMode') === 'true'){
+        document.body.classList.toggle('dark-mode');
+    }
 }
 
 });
+
+function ChangeMode() {
+    if(localStorage.getItem('darkMode') === 'true'){
+        localStorage.setItem('darkMode',"")
+        document.body.classList.remove('dark-mode');
+    }else{
+        localStorage.setItem("darkMode",'true')
+        document.body.classList.toggle('dark-mode');
+    }    
+}
