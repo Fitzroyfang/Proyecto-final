@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const profilePic = document.getElementById('profilePic');
 
     // Verificar el login
-    const user = sessionStorage.getItem('user'); // Cambiado para obtener el usuario del localStorage
+    const user = sessionStorage.getItem('user');
     if (!user) {
         window.location.href = "login.html";
     }
