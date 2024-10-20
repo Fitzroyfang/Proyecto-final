@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.onload = function(e) {
                 profilePic.src = e.target.result;
                 localStorage.setItem('profilePic', e.target.result);
-                localStorage.setItem('savedImage', e.target.result);
             };
             reader.readAsDataURL(file);
         }
@@ -54,10 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadProfileData() {
         const profileData = JSON.parse(localStorage.getItem('profileData')) || {};
         
-        const emailField = document.getElementById('email');
-        if (emailField) {
-            emailField.value = user;
-        }
+
 
 
         // Rellenar el campo de correo con el email del usuario logueado
@@ -115,6 +111,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   }
 
-  
-  window.onload = displayImage;
+
 
