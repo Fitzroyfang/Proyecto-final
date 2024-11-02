@@ -129,19 +129,21 @@
         <div class="container position-relative">
           <br><h4 class="position-absolute top-0 start-50 translate-middle-x">Agregar al carrito</h4><br><br><br>
           <div class="position-absolute top-50 start-50 translate-middle col-md-3 col-lg-3 col-xl-2 d-flex">
-            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2">
+            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
               <i class="fas fa-minus"></i>
             </button>
 
-            <input id="form1" min="0" name="quantity" value="1" type="number"
+            <input id="quantity_buy" min="0" name="quantity" value="1" type="number"
               class="form-control form-control-sm" />
 
-            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2">
+            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
               <i class="fas fa-plus"></i>
             </button>
           </div><br><br>
           
-          <button type="button" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x col-md-3 col-lg-3 col-xl-2">Comprar</button>
+          <button id="add_cart" type="button" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x col-md-3 col-lg-3 col-xl-2">Comprar</button>
         </div>
       </div>
 
@@ -206,6 +208,7 @@
   <script src="js/buscador.js"></script>
 
   <script src="js/checklogin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </body>
