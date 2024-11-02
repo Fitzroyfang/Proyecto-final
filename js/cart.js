@@ -2,8 +2,30 @@ document.addEventListener("DOMContentLoaded", function(e){
     const products = localStorage.getItem("cart");
     if(products){
         showProducts(JSON.parse(products))
+        updateCartCount(); // 
     }
-})
+});
+
+function updateCartCount() {
+    const products = localStorage.getItem("cart");
+    if(products) {
+        const parsedProducts = JSON.parse(products);
+        console.log(parsedProducts);
+
+        // Suma la cantidad total de productos.
+        const totalCount = parsedProducts.reduce((acc, item) => {
+            const quantity = Number(item.quantity) || 0;
+            console.log(`Cantidad de ${item.name}: ${quantity}`); // Verifica cada cantidad.
+            return acc + quantity;
+         }, 0); 
+        const cartCountElement = document.getElementById('cartCount');
+        cartCountElement.textContent = totalCount; // Actualiza el contador.
+    } else {
+        const cartCountElement = document.getElementById('cartCount');
+        cartCountElement.textContent = 0; // Si no hay productos, muestra 0.
+    }
+}
+
 async function showProducts(products) {
     let total = 0;
     const promises = products.map(async (element) => {

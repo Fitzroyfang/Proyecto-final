@@ -629,9 +629,6 @@ body.dark-mode {
   display: none;
 }
 
-
-
-
 #saveBtn {
   border-radius: 20px;
 }
@@ -645,4 +642,9 @@ body.dark-mode {
     max-height: 80px;
     margin-left: 15px;
     object-fit: contain;
+}
+
+#cartCount {
+  margin-right: 5px;
+
 }
