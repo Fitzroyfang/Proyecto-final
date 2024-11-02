@@ -122,8 +122,28 @@
     </div>
   </nav>
   <main>
-    <div class="container" id="container-prod-info"></div>
-    <div class="container row justify-content-between" id="galeria-imagenes"></div>
+    <div class="container">
+      <div class="container" id="container-prod-info"></div>
+      <div class="container">
+        <div class="container row justify-content-between" id="galeria-imagenes"></div><br>
+        <div class="container position-relative">
+          <br><h4 class="position-absolute top-0 start-50 translate-middle-x">Agregar al carrito</h4><br><br><br>
+          <div class="position-absolute top-50 start-50 translate-middle col-md-3 col-lg-3 col-xl-2 d-flex">
+            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2">
+              <i class="fas fa-minus"></i>
+            </button>
+
+            <input id="form1" min="0" name="quantity" value="1" type="number"
+              class="form-control form-control-sm" />
+
+            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div><br><br>
+          
+          <button type="button" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x col-md-3 col-lg-3 col-xl-2">Comprar</button>
+        </div>
+      </div>
 
 
     <div class="container">
