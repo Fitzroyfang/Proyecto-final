@@ -150,3 +150,33 @@ function ChangeMode() {
         document.body.classList.toggle('dark-mode');
     }    
 }
+
+function AddtoCart () {
+    let cart = localStorage.getItem('cart');
+    if (cart === null) {
+        cart = [];
+    } else {
+        cart = JSON.parse(cart);
+    }
+    let cantidad = document.getElementById("quantity_buy").value;
+    let producto = {
+        id: localStorage.getItem("prodID"),
+        quantity: cantidad
+    };
+    cart.push(producto);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    Swal.fire({
+        title: '¡Éxito!',
+        text: 'Producto agregado al carrito exitosamente.',
+        icon: 'success',
+        confirmButtonText: 'Ir al carrito'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = 'cart.html';
+        }});
+}
+
+document.getElementById("add_cart").addEventListener('click', function(e) {
+    AddtoCart();
+    //location.href = "cart.html";
+})
