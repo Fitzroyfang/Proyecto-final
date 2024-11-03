@@ -47,6 +47,34 @@ async function showProducts(products) {
     console.log("total", total);
     SetTotal(total);
 }
+
+function increaseQuantity(button) {
+    const productId = button.getAttribute("data-product-id");
+    const quantityInput = document.getElementById(`quantity-${productId}`);
+    let currentQuantity = parseInt(quantityInput.value);
+    quantityInput.value = currentQuantity + 1;
+    updateLocalStorage(productId, currentQuantity + 1);
+    location.reload();
+}
+
+function decreaseQuantity(button) {
+    const productId = button.getAttribute("data-product-id");
+    const quantityInput = document.getElementById(`quantity-${productId}`);
+    let currentQuantity = parseInt(quantityInput.value);
+    if (currentQuantity > 1) { // Evita que la cantidad sea menor que 1
+        quantityInput.value = currentQuantity - 1;
+        updateLocalStorage(productId, currentQuantity - 1);
+    }
+    location.reload();
+}
+
+function updateLocalStorage(prodID, quantity) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    const productIndex = cart.findIndex(item => item.id === prodID);
+    cart[productIndex].quantity = quantity;
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 function addProductCart(prod,cant){
     console.log(prod)
     let htmlContentToAppend = "";
@@ -57,9 +85,9 @@ function addProductCart(prod,cant){
     <div class="item-info">${prod.name}</div>
     <div class="quantity-control">
         <span>Cantidad</span>
-        <button>-</button>
-        <input type="text" value="${cant}">
-        <button>+</button>
+        <button onclick="decreaseQuantity(this)" data-product-id="${prod.id}">-</button>
+        <input id="quantity-${prod.id}" type="text" value="${cant}">
+        <button onclick="increaseQuantity(this)" data-product-id="${prod.id}">+</button>
     </div>
     <div class="price">${prod.currency} ${prod.cost}</div>
     <div class="delete-btn">🗑️</div>
