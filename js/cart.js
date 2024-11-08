@@ -90,7 +90,7 @@ function addProductCart(prod,cant){
         <button onclick="increaseQuantity(this)" data-product-id="${prod.id}">+</button>
     </div>
     <div class="price">${prod.currency} ${prod.cost}</div>
-    <div class="delete-btn">🗑️</div>
+    <div id="delete-${prod.id}" class="delete-btn">🗑️</div>
 </div>
             `
             document.getElementById("prductsCarrito").innerHTML += htmlContentToAppend;
