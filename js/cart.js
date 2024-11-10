@@ -80,7 +80,7 @@ function addProductCart(prod,cant){
     let htmlContentToAppend = "";
         htmlContentToAppend += 
             `
-            <div class="cart-item">
+            <div class="cart-item" id="cart-item-${prod.id}">
     <img src="` + prod.images[0] + `" alt="product image" class="item-image">
     <div class="item-info">${prod.name}</div>
     <div class="quantity-control">
@@ -90,7 +90,7 @@ function addProductCart(prod,cant){
         <button onclick="increaseQuantity(this)" data-product-id="${prod.id}">+</button>
     </div>
     <div class="price">${prod.currency} ${prod.cost}</div>
-    <div id="delete-${prod.id}" class="delete-btn">🗑️</div>
+    <div id="delete-${prod.id}" class="delete-btn" onclick="deleteProduct('${prod.id}')">🗑️</div>
 </div>
             `
             document.getElementById("prductsCarrito").innerHTML += htmlContentToAppend;
@@ -119,4 +119,16 @@ function SetTotal(total){
     <a href="#" class="btn">Finalizar compra</a>
     `
     document.getElementById("table").innerHTML += htmlContentToAppend;
+}
+
+function deleteProduct(prodId) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    const productIndex = cart.findIndex(item => item.id === prodId);
+
+    if (productIndex !== -1) {
+        cart.splice(productIndex, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        document.getElementById(`cart-item-${prodId}`).remove();
+        location.reload();
+    }
 }
