@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", function (e) {
     const products = localStorage.getItem("cart");
-    if(products){
+    if (products) {
         showProducts(JSON.parse(products))
         updateCartCount(); // 
     }
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 function updateCartCount() {
     const products = localStorage.getItem("cart");
-    if(products) {
+    if (products) {
         const parsedProducts = JSON.parse(products);
         console.log(parsedProducts);
 
@@ -17,7 +17,7 @@ function updateCartCount() {
             const quantity = Number(item.quantity) || 0;
             console.log(`Cantidad de ${item.name}: ${quantity}`); // Verifica cada cantidad.
             return acc + quantity;
-         }, 0); 
+        }, 0);
         const cartCountElement = document.getElementById('cartCount');
         cartCountElement.textContent = totalCount; // Actualiza el contador.
     } else {
@@ -31,7 +31,7 @@ async function showProducts(products) {
     const promises = products.map(async (element) => {
         const URL = `https://japceibal.github.io/emercado-api/products/${element.id}.json`;
         const resultObj = await getJSONData(URL);
-        
+
         if (resultObj.status === "ok") {
             const data = resultObj.data;
             console.log(data.cost);
@@ -43,7 +43,7 @@ async function showProducts(products) {
 
     // Espero a que todas las promesas se resuelvan porque sino el total da 0
     await Promise.all(promises);
-    
+
     console.log("total", total);
     SetTotal(total);
 }
@@ -54,7 +54,7 @@ function increaseQuantity(button) {
     let currentQuantity = parseInt(quantityInput.value);
     quantityInput.value = currentQuantity + 1;
     updateLocalStorage(productId, currentQuantity + 1);
-    location.reload();
+    actualizarCostos();
 }
 
 function decreaseQuantity(button) {
@@ -65,7 +65,7 @@ function decreaseQuantity(button) {
         quantityInput.value = currentQuantity - 1;
         updateLocalStorage(productId, currentQuantity - 1);
     }
-    location.reload();
+    actualizarCostos();
 }
 
 function updateLocalStorage(prodID, quantity) {
@@ -75,11 +75,11 @@ function updateLocalStorage(prodID, quantity) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function addProductCart(prod,cant){
+function addProductCart(prod, cant) {
     console.log(prod)
     let htmlContentToAppend = "";
-        htmlContentToAppend += 
-            `
+    htmlContentToAppend +=
+        `
             <div class="cart-item">
     <img src="` + prod.images[0] + `" alt="product image" class="item-image">
     <div class="item-info">${prod.name}</div>
@@ -93,13 +93,13 @@ function addProductCart(prod,cant){
     <div class="delete-btn">🗑️</div>
 </div>
             `
-            document.getElementById("prductsCarrito").innerHTML += htmlContentToAppend;
+    document.getElementById("prductsCarrito").innerHTML += htmlContentToAppend;
 }
 
-function ResumenCompra(prod,cant){
+function ResumenCompra(prod, cant) {
     let htmlContentToAppend = "";
-            htmlContentToAppend += 
-            `
+    htmlContentToAppend +=
+        `
         <tr>
             <td>x${cant} ${prod.name}</td>
             <td>${prod.currency} ${prod.cost}</td>
@@ -107,11 +107,11 @@ function ResumenCompra(prod,cant){
         `
     document.getElementById("table").innerHTML += htmlContentToAppend;
 }
-function SetTotal(total){
-    console.log("total2",total)
+function SetTotal(total) {
+    console.log("total2", total)
     let htmlContentToAppend = "";
-    htmlContentToAppend += 
-    `
+    htmlContentToAppend +=
+        `
     <tr class="total-row">
     <td>Total</td>
     <td>UYU ${total}</td>
@@ -121,3 +121,30 @@ function SetTotal(total){
     document.getElementById("table").innerHTML += htmlContentToAppend;
 }
 
+function actualizarCostos() {
+    let subtotal = 0;
+    const products = JSON.parse(localStorage.getItem("cart"));
+
+    // Calcula el subtotal
+
+    products.forEach(product => {
+        const price = product.price || 0;
+        const quantity = product.quantity || 1;
+        subtotal += price * quantity;
+    });
+
+    // Obtiene el costo de envío desde shippgin.js
+    const shippingCost = calcularEnvio(subtotal);
+
+    // Calcula el total sumando el subtotal y el costo de envío
+    const total = subtotal + shippingCost;
+
+    actualizarResumenCompra(subtotal, shippingCost, total);
+}
+
+function actualizarResumenCompra(subtotal, shippginCost, total) {
+    document.getElementById("subtotal").textContent = `Subtotal: UYU ${subtotal.toFixed(2)}`;
+    document.getElementById('shipping-cost').textContent = `Costo de Envío: UYU ${shippingCost.toFixed(2)}`;
+    document.getElementById('total-cost').textContent = `Total: UYU ${total.toFixed(2)}`;
+
+}
