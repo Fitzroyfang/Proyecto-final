@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envío</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/Cart.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-100 justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="categories.html">Categorías</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sell.html">Vender</a>
+              </li>
+              <a class="nav-item usuario dropdown-toggle" href="login.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuario-cart">Iniciar sesión</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="cart.html">Mi carrito
+                    <span class="badge rounded-pill bg-danger" id="cartCount">0</span>
+                  </a></li>
+                  <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                  <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
+                </ul>
+            </ul>
+            <img id="profilePic" alt="Foto de perfil" class="profile-Pic">
+          </div>
+        </div>
+      </nav>
+    <main>
+
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Tipo de Envío</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="adress.html">Dirección</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="payment.html">Método de Pago</a>
+        </li>
+      </ul>
+
+        <div class="container">
+          <div id="Envío">
+            <div id="tipoEnvío">
+              <h2 class="titulo">Tipo de Envío</h2>
+            </div>
+          </div>
+            
+          <table id="envíos">
+            <tr>
+              <th class="cart-item">
+                <input type="checkbox" class="round-checkbox" id="check1" name="check" value="1">
+                <div class="text-cart">
+                  <h5>Envío Premium</h5>
+                  <p>Tiempo estimado: de 2 a 5 días</p>
+                  <h5>15%</h5>
+                </div>
+              </th>
+              <th class="cart-item">
+                <input type="checkbox" class="round-checkbox" id="check2" name="check" value="2">
+                <div class="text-cart">
+                  <h5>Envío Express</h5>
+                  <p>Tiempo estimado: de 5 a 8 días</p>
+                  <h5>7%</h5>
+                </div>
+              </th>
+              <th class="cart-item">
+                <input type="checkbox" class="round-checkbox" id="check3" name="check" value="3">
+                <div class="text-cart">
+                  <h5>Envío Standard</h5>
+                  <p>Tiempo estimado: de 12 a 15 días</p>
+                  <h5>5%</h5>
+                </div>
+              </th>
+            </tr>
+          </table>
+          
+          <a href="adress.html">dirección</a>
+
+          <div id="CarritoResumen2">
+            <h2>Resumen de compra</h2>
+            <table id="table2">
+              <tr>
+                <th>Artículo</th>
+                <th>Precio</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </main>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/buscador.js"></script>
+    <script src="js/my-profile.js"></script>
+    <script src="js/shipping.js"></script>
+</body>
+</html>
