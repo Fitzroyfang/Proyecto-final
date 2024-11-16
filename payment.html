@@ -74,27 +74,27 @@
             </form>
 
             <form id="card" class="needs-validation" novalidate>
-              <label for="titular" class="form-label">Nombre del titular de la tarjeta:
-                  <input type="text" id="titular" class="form-control" required>
-                  <div class="invalid-feedback">Por favor ingresa el nombre del titular.</div>
-              </label>
-              <label for="cardNumber" class="form-label">Número de tarjeta:
-                  <input type="text" id="cardNumber" placeholder="0000-0000-0000-0000" minlength="16" maxlength="19"  class="form-control" required>
-                  <div class="invalid-feedback">Por favor ingresa un número de tarjeta válido.</div>
-              </label>
-              <label for="vto" class="form-label">Fecha de vencimiento:
-                  <input type="text" id="vto" placeholder="MM/YY" maxlength="5" pattern="(0[1-9]|1[0-2])\/\d{2}" class="form-control" required>
-                  <div class="invalid-feedback">Por favor ingresa una fecha válida en formato MM/YY.</div>
-              </label>
-              <label for="cvv" class="form-label">CVV:
-                  <input type="text" id="cvv" placeholder="000" maxlength="3" class="form-control" required>
-                  <div class="invalid-feedback">Por favor ingresa un CVV válido.</div>
-              </label>
-              <label  id="submitPay">
-                <input type="submit">
-              </label>
-          </form>
-          
+              <div class="mb-3">
+                <label for="titular" class="form-label">Nombre del titular de la tarjeta:</label>
+                <input type="text" id="titular" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa el nombre del titular.</div>
+              </div>
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label">Número de tarjeta:</label>
+                <input type="text" id="cardNumber" placeholder="0000-0000-0000-0000" maxlength="19" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa un número de tarjeta válido.</div>
+              </div>
+              <div class="mb-3">
+                <label for="vto" class="form-label">Fecha de vencimiento:</label>
+                <input type="text" id="vto" placeholder="MM/YY" maxlength="5" pattern="(0[1-9]|1[0-2])\/\d{2}" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa una fecha válida en formato MM/YY.</div>
+              </div>
+              <div class="mb-3">
+                <label for="cvv" class="form-label">CVV:</label>
+                <input type="text" id="cvv" placeholder="000" maxlength="3" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa un CVV válido.</div>
+              </div>
+            </form>
             
       
             <form id="deposit">
@@ -113,12 +113,13 @@
               <img src="img/Abitab_2014.png" class="métodos">
             </div>
           </div>
-          <label  id="submitPay2">
+          <label  id="submitPay">
             <input type="submit">
           </label>
 
            </div> 
 
+        
            <div id="CarritoResumen">
             <h2>Resumen de compra</h2>
             <table id="table">
@@ -127,11 +128,12 @@
                 <th>Precio</th>
               </tr>
             </table>
-          </div>      
+          </div>
         </div>
       </main>
     <script src="js/init.js"></script>
     <script src="js/my-profile.js"></script>
     <script src="js/payment.js"></script>
+    <script src="js/shipping.js"></script>
 </body>
 </html>
