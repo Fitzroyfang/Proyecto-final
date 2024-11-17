@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma de pago</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/Cart.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-100 justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="categories.html">Categorías</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sell.html">Vender</a>
+              </li>
+              <a class="nav-item usuario dropdown-toggle" href="login.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuario-cart">Iniciar sesión</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="cart.html">Mi carrito
+                    <span class="badge rounded-pill bg-danger" id="cartCount">0</span>
+                  </a></li>
+                  <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                  <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
+                </ul>
+            </ul>
+            <img id="profilePic" alt="Foto de perfil" class="profile-Pic">
+          </div>
+        </div>
+      </nav>
+    <main>
+
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <li class="nav-item">
+          <a class="nav-link" href="shipping.html">Tipo de Envío</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="adress.html">Dirección</a>
+        </li>
+          <a class="nav-link active" aria-current="page" href="#">Método de Pago</a>
+        </li>
+      </ul>
+
+        <div class="container">
+          <div id="pago">
+            <div id="métodoPago">
+              <h2>Forma de Pago</h2>
+            </div>
+
+            <form id="paymentForm">
+                <label>
+                    <p>Método de pago:</p>
+                    <select id="tarjeta-depósito" onchange="togglePaymentForm()">
+                        <option value="seleccionar">Seleccione su método de pago...</option>
+                        <option value="tarjeta">Tarjeta de crédito/débito</option>
+                        <option value="depósito">Depósito en redes de cobranza</option>
+                    </select>
+                </label>
+            </form>
+
+            <form id="card" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="titular" class="form-label">Nombre del titular de la tarjeta:</label>
+                <input type="text" id="titular" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa el nombre del titular.</div>
+              </div>
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label">Número de tarjeta:</label>
+                <input type="text" id="cardNumber" placeholder="0000-0000-0000-0000" maxlength="19" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa un número de tarjeta válido.</div>
+              </div>
+              <div class="mb-3">
+                <label for="vto" class="form-label">Fecha de vencimiento:</label>
+                <input type="text" id="vto" placeholder="MM/YY" maxlength="5" pattern="(0[1-9]|1[0-2])\/\d{2}" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa una fecha válida en formato MM/YY.</div>
+              </div>
+              <div class="mb-3">
+                <label for="cvv" class="form-label">CVV:</label>
+                <input type="text" id="cvv" placeholder="000" maxlength="3" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa un CVV válido.</div>
+              </div>
+            </form>
+            
+      
+            <form id="deposit">
+              <label>
+                <p>Red de cobranza:</p>
+                <select id="depósitoRedes">
+                  <option value="abitab">Abitab</option>
+                  <option value="redpagos">Redpagos</option>
+                </select>
+                <p id="aviso">*Tiene hasta 48 horas para efectuar el pago, los datos se enviarán al mail con el que se realizó la compra.</p>
+              </label>
+            </form>
+            <div class="container" id="fotosPago">
+            <div class="imageContainer">
+              <img src="img/Formas_de_Pago-min-scaled.jpg" class="métodos">
+              <img src="img/Abitab_2014.png" class="métodos">
+            </div>
+          </div>
+          <label  id="submitPay">
+            <input type="submit">
+          </label>
+
+           </div> 
+
+        
+           <div id="CarritoResumen">
+            <h2>Resumen de compra</h2>
+            <table id="table">
+              <tr>
+                <th>Artículo</th>
+                <th>Precio</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </main>
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="js/shipping.js"></script>
+</body>
+</html>

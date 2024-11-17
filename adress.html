@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirección</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/Cart.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-100 justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="categories.html">Categorías</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sell.html">Vender</a>
+              </li>
+              <a class="nav-item usuario dropdown-toggle" href="login.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuario-cart">Iniciar sesión</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="cart.html">Mi carrito
+                    <span class="badge rounded-pill bg-danger" id="cartCount">0</span>
+                  </a></li>
+                  <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                  <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
+                </ul>
+            </ul>
+            <img id="profilePic" alt="Foto de perfil" class="profile-Pic">
+          </div>
+        </div>
+      </nav>
+    <main>
+
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <li class="nav-item">
+          <a class="nav-link" href="shipping.html">Tipo de Envío</a>
+        </li>
+          <a class="nav-link active" aria-current="page" href="#">Dirección</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link disabled" href="payment.html">Método de Pago</a>
+        </li>
+      </ul>
+
+        <div class="container">
+          <div id="direcciónPago">
+            <div id="dirección">
+              <h2>Dirección de Envío</h2>
+            </div>
+
+            <form id="adressForm" class="needs-validation" novalidate>
+                <label>
+                    <p>Departamento*</p>
+                    <select id="departamento" required>
+                        <option value="Artigas">Artigas</option>
+                        <option value="Canelones">Canelones</option>
+                        <option value="Cerro Largo">Cerro Largo</option>
+                        <option value="Colonia">Colonia</option>
+                        <option value="Durazno">Durazno</option>
+                        <option value="Flores">Flores</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Lavalleja">Lavalleja</option>
+                        <option value="Maldonado">Maldonado</option>
+                        <option value="Montevideo">Montevideo</option>
+                        <option value="Paysandu">Paysandu</option>
+                        <option value="Río Negro">Río Negro</option>
+                        <option value="Rivera">Rivera</option>
+                        <option value="Rocha">Rocha</option>
+                        <option value="Salto">Salto</option>
+                        <option value="San José">San José</option>
+                        <option value="Soriano">Soriano</option>
+                        <option value="Tacuarembó">Tacuarembó</option>
+                        <option value="Treinta y Tres">Treinta y Tres</option>
+                    </select>
+                </label><br>
+
+            <label id="localidad">
+                <p>Localidad*</p>
+                <input type="text" class="form-control my-invalid-input" required>
+                <div class="invalid-feedback">
+                  Por favor, ingrese una localidad válida.
+                </div>
+            </label><br>
+
+            <label id="calle">
+                <p>Calle*</p>
+                <input type="text" class="form-control my-invalid-input" required>
+                <div class="invalid-feedback">
+                  Por favor, ingrese una calle válida.
+                </div>
+            </label><br>
+           
+            <label id="número">
+                <p>Número</p>
+                <input type="number">
+            </label><br>
+
+            <label id="esq" >
+                <p>Esquina*</p>
+                <input type="text" class="form-control my-invalid-input" required>
+                <div class="invalid-feedback">
+                  Por favor, ingrese una esquina válida.
+                </div>
+            </label>
+
+            <label  id="submitAdress">
+              <input type="submit">
+            </label>
+            </form>
+          </div>
+
+
+          <div id="CarritoResumen">
+            <h2>Resumen de compra</h2>
+            <table id="table">
+              <tr>
+                <th>Artículo</th>
+                <th>Precio</th>
+              </tr>
+            </table>
+          </div>
+          <a href="payment.html" id="payLink">Continuar</a>
+        </div>
+      </main>
+    <script src="js/init.js"></script>
+    <script src="js/shipping.js"></script>
+    <script src="js/adress.js"></script>
+</body>
+</html>

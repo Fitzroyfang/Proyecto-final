@@ -116,7 +116,7 @@ function SetTotal(total){
     <td>Total</td>
     <td>UYU ${total}</td>
     </tr>
-    <a href="#" class="btn">Finalizar compra</a>
+    <a href="shipping.html" class="btn">Continuar compra</a>
     `
     document.getElementById("table").innerHTML += htmlContentToAppend;
 }
