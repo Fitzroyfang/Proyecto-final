@@ -650,35 +650,45 @@ body.dark-mode {
 }
 
 #envíos {
-  margin-top: 6rem;
+  margin-top: 5.5rem;
   width: 50%;
 }
 
-#Envío h2{
-  margin-top: 4rem;
-  text-align: center;
+
+.titulo {
+  position: relative;
+  top: 40px; 
+  left: 400px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center; 
+  padding: 10px; 
+  border-bottom: 1px solid #ddd; 
 }
 
 .text-cart {
-  margin-left: 0px;
+  display: flex; 
+  flex-direction: column; 
+  margin: 0; 
+  padding: 0; 
+  text-align: left; 
+  flex: 1; 
 }
 
-#CarritoResumen {
-  margin-top: 6rem;
-  border-radius: 8px;
-}
-
-#PagoResumen {
-  margin-top: 6rem;
-  border-radius: 8px;
+.text-cart h5, 
+.text-cart p {
+  margin: 0; 
+  padding: 0; 
 }
 
 .round-checkbox {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  appearance: none; /* Remueve el estilo por defecto */
-  -webkit-appearance: none; /* Compatibilidad en algunos navegadores */
+  margin-right: 15px;
+  appearance: none; 
   background-color: #FFFEFE;
   border: 2px solid #6C757D;
   cursor: pointer;
@@ -686,7 +696,12 @@ body.dark-mode {
 }
 
 .round-checkbox:checked {
-  background-color: #0087F7; /* Cambia color al estar seleccionado */
+  background-color: #0087F7;
+}
+
+#CarritoResumen {
+  margin-top: 6rem;
+  border-radius: 8px;
 }
 
 #direcciónPago {
@@ -696,7 +711,7 @@ body.dark-mode {
 #adressForm {
   border-radius: 8px;
   padding: 15px; 
-  border: 1px solid #ccc; /* Opcional: un borde suave */
+  border: 1px solid #ccc; 
   width: 800px;
 }
 
@@ -706,7 +721,7 @@ body.dark-mode {
   padding: 8px;
   border: 1px solid #ccc;
   width: 770px;
-  margin-bottom: 10px; /* Espacio entre los campos */
+  margin-bottom: 10px; 
   box-sizing: border-box;
 }
 
@@ -739,7 +754,7 @@ body.dark-mode {
 #pago {
   border-radius: 8px;
   padding: 15px; 
-  border: 1px solid #ccc; /* Opcional: un borde suave */
+  border: 1px solid #ccc; 
   width: 800px;
   margin-top: 6rem;
 }
@@ -750,7 +765,7 @@ body.dark-mode {
   padding: 8px;
   border: 1px solid #ccc;
   width: 770px;
-  margin-bottom: 10px; /* Espacio entre los campos */
+  margin-bottom: 10px; 
   box-sizing: border-box;
 }
 
