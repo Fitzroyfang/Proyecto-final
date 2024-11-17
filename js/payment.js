@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
           form.classList.add('was-validated');
       }, false);
   });
-});
+
+  mostrarResumenCompra();
 
 document.getElementById("vto").addEventListener("input", function (event) {
     const input = event.target;
@@ -72,3 +73,63 @@ function togglePaymentForm() {
       submitPay2.style.display = "none";
     }
   }
+
+  async function mostrarResumenCompra() {
+    const products = JSON.parse(localStorage.getItem("cart") || '[]');
+    let total = 0;
+
+    document.getElementById("table").innerHTML = `
+    <tr>
+    <th>Artículo</th>
+    <th>Precio</th>
+    </tr>
+    `;
+
+    const promises = products.map(async (element) => {
+        const URL = `https://japceibal.github.io/emercado-api/products/${element.id}.json`;
+        const resultObj = await getJSONData(URL);
+        
+        if (resultObj.status === "ok") {
+            const data = resultObj.data;
+            console.log(data.cost);
+            total += Number(data.cost) * element.quantity;
+            ResumenCompra(data, element.quantity);
+        }
+    });
+
+    // Espero a que todas las promesas se resuelvan porque sino el total da 0
+    await Promise.all(promises);
+    
+    const shippingCost = calcularEnvio(total);
+    const grandTotal = total + shippingCost;
+    SetTotal(grandTotal, shippingCost);
+}
+
+function ResumenCompra(prod,cant){
+    let htmlContentToAppend = "";
+            htmlContentToAppend += 
+            `
+        <tr>
+            <td>x${cant} ${prod.name}</td>
+            <td>${prod.currency} ${prod.cost}</td>
+        </tr>
+        `
+    document.getElementById("table").innerHTML += htmlContentToAppend;
+}
+
+function SetTotal(grandTotal, shippingCost){
+   document.getElementById("shipping-cost").innerHTML = `Costo de Envío: UYU ${shippingCost.toFixed(2)}`;
+   document.getElementById("total-cost").innerHTML = `Total: UYU ${grandTotal.toFixed(2)}`;
+}
+   
+const payLink = document.getElementById('payLink');
+payLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    const actualCheckbox = localStorage.getItem("shipping");
+    if (actualCheckbox) {
+        window.location.href = "adress.html";
+    }else{
+        alert("Please select the shipping option before proceeding.");
+    }
+});
+  });
