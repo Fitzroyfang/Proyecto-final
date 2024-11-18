@@ -62,10 +62,10 @@
               <h2>Forma de Pago</h2>
             </div>
 
-            <form id="paymentForm">
+            <form id="tarjetaDepositoSelecct">
                 <label>
                     <p>Método de pago:</p>
-                    <select id="tarjeta-depósito" onchange="togglePaymentForm()">
+                    <select id="tarjeta-depósito" class="tarjetaDepositoSelecct">
                         <option value="seleccionar">Seleccione su método de pago...</option>
                         <option value="tarjeta">Tarjeta de crédito/débito</option>
                         <option value="depósito">Depósito en redes de cobranza</option>
@@ -73,7 +73,7 @@
                 </label>
             </form>
 
-            <form id="card" class="needs-validation" novalidate>
+            <form id="card" class="needs-validation">
               <div class="mb-3">
                 <label for="titular" class="form-label">Nombre del titular de la tarjeta:</label>
                 <input type="text" id="titular" class="form-control" required>
@@ -114,7 +114,7 @@
             </div>
           </div>
           <label  id="submitPay">
-            <input type="submit">
+            <a href="" id="FinalizarCompra">Finalizar Compra</a>
           </label>
 
            </div> 

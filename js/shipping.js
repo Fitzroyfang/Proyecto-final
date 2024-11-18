@@ -75,7 +75,7 @@ function SetTotal(grandTotal, shippingCost){
 const payLink = document.getElementById('payLink');
 payLink.addEventListener("click", (e) => {
     e.preventDefault();
-    const actualCheckbox = localStorage.getItem("shipping");
+    const actualCheckbox = localStorage.getItem("shippingOption");
     if (actualCheckbox) {
         window.location.href = "adress.html";
     }else{

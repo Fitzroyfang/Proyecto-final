@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   mostrarResumenCompra();
 
-document.getElementById("vto").addEventListener("input", function (event) {
+  document.getElementById("vto").addEventListener("input", function (event) {
     const input = event.target;
     let value = input.value.replace(/\D/g, ''); // Elimina caracteres no numéricos
 
@@ -51,7 +51,7 @@ document.getElementById("titular").addEventListener("input", function (event) {
 });
 
 
-function togglePaymentForm() {
+document.getElementById("tarjeta-depósito").addEventListener("change",function(){
     const method = document.getElementById("tarjeta-depósito").value;
     const card = document.getElementById("card");
     const deposit = document.getElementById("deposit");
@@ -59,20 +59,17 @@ function togglePaymentForm() {
     if (method === "tarjeta") {
       card.style.display = "block";
       deposit.style.display = "none";
-      submitPay.style.display = "block";
       submitPay2.style.display = "none";
     } else if (method === "depósito") {
       card.style.display = "none";
       deposit.style.display = "block";
       submitPay2.style.display = "block";
-      submitPay.style.display = "none";
     } else {
       card.style.display = "none";
       deposit.style.display = "none";
-      submitPay.style.display = "none";
       submitPay2.style.display = "none";
     }
-  }
+  })
 
   async function mostrarResumenCompra() {
     const products = JSON.parse(localStorage.getItem("cart") || '[]');
@@ -121,15 +118,16 @@ function SetTotal(grandTotal, shippingCost){
    document.getElementById("shipping-cost").innerHTML = `Costo de Envío: UYU ${shippingCost.toFixed(2)}`;
    document.getElementById("total-cost").innerHTML = `Total: UYU ${grandTotal.toFixed(2)}`;
 }
+
+
    
-const payLink = document.getElementById('payLink');
-payLink.addEventListener("click", (e) => {
+const Finalizar = document.getElementById('FinalizarCompra');
+Finalizar.addEventListener("click", (e) => {
     e.preventDefault();
-    const actualCheckbox = localStorage.getItem("shipping");
-    if (actualCheckbox) {
-        window.location.href = "adress.html";
-    }else{
-        alert("Please select the shipping option before proceeding.");
+    if (!needs-validation.checkValidity()) {
+      needs-validation.classList.add("was-validated");
+      alert("Por favor, complete todos los campos obligatorios.");
+      return;
     }
 });
   });
