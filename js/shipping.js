@@ -5,7 +5,12 @@ function getShippingOption() {
 // Guarda el tipo de envío seleccionado en localStorage
 
 function saveShippingOption(selectedOption) {
-    localStorage.setItem('shippingOption', selectedOption);
+    const acctShipping= localStorage.getItem('shippingOption');
+    if(selectedOption===acctShipping){
+        localStorage.removeItem("shippingOption")
+    }else{
+        localStorage.setItem('shippingOption', selectedOption);
+    }
 }
 
 // Función para calcular y mostrar el costo de envío
@@ -106,8 +111,6 @@ checkboxes.forEach(checkbox => {
                 otherCheckbox.checked = false;
             }
         });
-
-        // Guarda la opción seleccionada en localstorage
 
         saveShippingOption(checkbox.value);
         actualizarResumenCompra();

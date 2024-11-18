@@ -129,4 +129,11 @@ function SetTotal(grandTotal, shippingCost){
           })
           }
         }
+        if(method==="depósito"){
+          Swal.fire({
+            title: '¡Éxito!',
+            text: 'La compra se realizo exitosamente',
+            icon: 'success',
+        })
+        }
       }, false);
