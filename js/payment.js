@@ -1,16 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  const forms = document.querySelectorAll('.needs-validation');
-  forms.forEach(form => {
-      form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-              event.preventDefault();
-              event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-      }, false);
-  });
 
   mostrarResumenCompra();
 
@@ -24,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     input.value = value;
-});
+  });
 
 document.getElementById("cardNumber").addEventListener("input", function (event) {
     const input = event.target;
@@ -119,15 +109,18 @@ function SetTotal(grandTotal, shippingCost){
    document.getElementById("total-cost").innerHTML = `Total: UYU ${grandTotal.toFixed(2)}`;
 }
 
-
-   
-const Finalizar = document.getElementById('FinalizarCompra');
-Finalizar.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (!needs-validation.checkValidity()) {
-      needs-validation.classList.add("was-validated");
-      alert("Por favor, complete todos los campos obligatorios.");
-      return;
-    }
-});
   });
+
+
+  const formCard = document.getElementById('card');
+  const btnFinalizar =document.getElementById("FinalizarCompra");
+  btnFinalizar.addEventListener('click', event => {
+    const method = document.getElementById("tarjeta-depósito").value;
+if(method==="tarjeta"){
+          if (!formCard.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+          }
+          formCard.classList.add('was-validated');
+        }
+      }, false);
