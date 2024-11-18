@@ -133,22 +133,9 @@ function actualizarCostos() {
         const quantity = product.quantity || 1;
         subtotal += price * quantity;
     });
-
-    // Obtiene el costo de envío desde shippgin.js
-    const shippingCost = calcularEnvio(subtotal);
-
-    // Calcula el total sumando el subtotal y el costo de envío
-    const total = subtotal + shippingCost;
-
-    actualizarResumenCompra(subtotal, shippingCost, total);
+    location.reload();
 }
 
-function actualizarResumenCompra(subtotal, shippginCost, total) {
-    document.getElementById("subtotal").textContent = `Subtotal: UYU ${subtotal.toFixed(2)}`;
-    document.getElementById('shipping-cost').textContent = `Costo de Envío: UYU ${shippingCost.toFixed(2)}`;
-    document.getElementById('total-cost').textContent = `Total: UYU ${total.toFixed(2)}`;
-
-}
 
 function deleteProduct(prodId) {
     let cart = JSON.parse(localStorage.getItem("cart"));
