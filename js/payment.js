@@ -49,7 +49,6 @@ document.getElementById("tarjeta-depósito").addEventListener("change",function(
     if (method === "tarjeta") {
       card.style.display = "block";
       deposit.style.display = "none";
-      submitPay2.style.display = "none";
     } else if (method === "depósito") {
       card.style.display = "none";
       deposit.style.display = "block";
@@ -57,7 +56,6 @@ document.getElementById("tarjeta-depósito").addEventListener("change",function(
     } else {
       card.style.display = "none";
       deposit.style.display = "none";
-      submitPay2.style.display = "none";
     }
   })
 
@@ -115,12 +113,20 @@ function SetTotal(grandTotal, shippingCost){
   const formCard = document.getElementById('card');
   const btnFinalizar =document.getElementById("FinalizarCompra");
   btnFinalizar.addEventListener('click', event => {
-    const method = document.getElementById("tarjeta-depósito").value;
-if(method==="tarjeta"){
+    event.preventDefault();
+      const method = document.getElementById("tarjeta-depósito").value;
+        if(method==="tarjeta"){
           if (!formCard.checkValidity()) {
-              event.preventDefault();
+            
               event.stopPropagation();
+              formCard.classList.add("was-validated");
           }
-          formCard.classList.add('was-validated');
+          else{
+            Swal.fire({
+              title: '¡Éxito!',
+              text: 'La compra se realizo exitosamente',
+              icon: 'success',
+          })
+          }
         }
       }, false);
