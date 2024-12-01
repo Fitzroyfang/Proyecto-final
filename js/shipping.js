@@ -73,6 +73,7 @@ function ResumenCompra(prod,cant){
         <tr>
             <td>x${cant} ${prod.name}</td>
             <td>${prod.currency} ${prod.cost}</td>
+            
         </tr>
         `
     document.getElementById("table").innerHTML += htmlContentToAppend;
