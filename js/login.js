@@ -1,25 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-inicio').addEventListener('click', () => {
-      let emailField = document.getElementById('usuario');
-      let pass = document.getElementById('password').value;
-
-      if (emailField.checkValidity() && pass !== '') {
-          sessionStorage.setItem("user", emailField.value);
-          location.href = "index.html";
-      } else if (!emailField.checkValidity() && pass !== '') {
-          alert("Por favor ingrese un correo electrónico válido");
-      } else if (emailField.checkValidity() && pass === '') {
-          alert("Por favor ingrese su contraseña");
-      } else {
-          alert("Por favor ingrese su correo electrónico y contraseña");
-      }
+     login()
   });
 });
+async function login() {
+  let emailField = document.getElementById('usuario');
+  let pass = document.getElementById('password').value;
+  let user = {
+    Mail: emailField.value,
+    Pass: pass
+  };
+
+  if (emailField.checkValidity() && pass !== '') {
+
+    const data = await SendLogin(user);
+    console.log(data);
+    // Verificamos si la respuesta tiene el estado 200
+    if (data.status === 200) {
+      sessionStorage.setItem("user", emailField.value);
+      sessionStorage.setItem("token", data.Token);
+      location.href = "index.html";
+    } else {
+      alert(data.message || "Error en el inicio de sesión");
+    }
+  } else if (!emailField.checkValidity() && pass !== '') {
+    alert("Por favor ingrese un correo electrónico válido");
+  } else if (emailField.checkValidity() && pass === '') {
+    alert("Por favor ingrese su contraseña");
+  } else {
+    alert("Por favor ingrese su correo electrónico y contraseña");
+  }
+}
+
+async function SendLogin(user) {
+  try {
+    const response = await fetch('http://localhost:3001/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
+    
+
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error('Error al hacer login:', error);
+    return { status: 500, message: "Error en la solicitud" };
+  }
+}
 
 
-document.getElementById('btn-inicio').addEventListener('click', (e) => {
-login();
-});
+
 
 
 document.getElementById("password").addEventListener('keydown', (e) => {
