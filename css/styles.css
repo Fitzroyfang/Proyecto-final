@@ -426,6 +426,10 @@ button {
   text-align: center;
 }
 
+#btn-darkmode {
+  background-color: white;
+  border: white;
+}
 
   body.dark-mode {
     background-color: #1e1e1e;

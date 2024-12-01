@@ -115,21 +115,12 @@
               </a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
-              <li><!-- Modo oscuro -->
-                <div class="form-check form-switch mt-3">
-                  <input type="checkbox" id="btnSwitch">
-                  <label for="btnSwitch" id="labelSwitch">
-                    <img src="img/moon_15961741.png" alt="Moon icon" class="img-switch">
-                  </label>
-                  
-                  <!-- Modo claro -->
-                  <input type="checkbox" id="btnSwitch2">
-                  <label class="form-check-label" for="btnSwitch2">
-                    <img src="img/sun_869818.png" alt="Sun icon" class="img-switch">
-                  </label>
-                </div>
-              </div> 
-            </li>
+              <li>
+                <button  onclick="ChangeMode()" id="btn-darkmode">
+                      <img src="img/moon_15961741.png" alt="Moon icon" class="img-switch">
+                      <img src="img/sun_869818.png" alt="Sun icon" class="img-switch">
+              </button>
+              </li>
             </ul>
           </li>
         </ul>

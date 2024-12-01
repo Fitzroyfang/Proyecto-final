@@ -14,19 +14,16 @@ function setProdID(id) {
     localStorage.setItem("prodID", id);
     window.location = "product-info.html"
 }
- // Evento para activar el modo oscuro
- btnSwitch.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode', btnSwitch.checked);
-    btnSwitch2.checked = false; // Desactivar el otro switch
-    localStorage.setItem('dark-mode', btnSwitch.checked ? 'enabled' : 'disabled');
-});
+function ChangeMode() {
+    if(localStorage.getItem('darkMode') === 'true'){
+        localStorage.setItem('darkMode',"")
+        document.body.classList.remove('dark-mode');
+    }else{
+        localStorage.setItem("darkMode",'true')
+        document.body.classList.toggle('dark-mode');
+    }    
+}
 
-// Evento para desactivar el modo oscuro
-btnSwitch2.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode', btnSwitch2.checked);
-    btnSwitch.checked = false; 
-    localStorage.setItem('dark-mode', btnSwitch2.checked ? 'disabled' : 'enabled');
-});
 
 
 function showCategoriesList(array) {
@@ -60,7 +57,7 @@ function showCategoriesList(array) {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
-    if(localStorage.getItem('darkMode') === 'true'){
+    if(localStorage.getItem('dark-mode') === 'true'){
         document.body.classList.toggle('dark-mode');
     }
     const catID = localStorage.getItem("catID");
