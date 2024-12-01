@@ -94,6 +94,7 @@
       </div>
         <script src="js/suggestions.js"></script>
         <script src="js/buscador.js"></script>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
@@ -113,17 +114,21 @@
               </a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
+              <li>
+                <button  onclick="ChangeMode()" id="btn-darkmode">
+                  <img src="img/moon_15961741.png" alt="Moon icon" class="img-switch">
+                  <img src="img/sun_869818.png" alt="Sun icon" class="img-switch">
+                </button>
+              </li>
+          
             </ul>
           </li>
-          <li>
-            <button  onclick="ChangeMode()">Cambiar Modo</button>
-          </li>
-          
         </ul>
         <img id="profilePic" alt="Foto de perfil" class="profile-Pic">
       </div>
     </div>
   </nav>
+  
   <main class="pb-5">
     <div class="text-center p-4">
       <h2>Categorías</h2>

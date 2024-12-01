@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 showReviews(data);
             }
     })
-    if(localStorage.getItem('darkMode') === 'true'){
+    if(localStorage.getItem('dark-mode') === 'true'){
         document.body.classList.toggle('dark-mode');
     }
 }
@@ -150,6 +150,7 @@ function ChangeMode() {
         document.body.classList.toggle('dark-mode');
     }    
 }
+
 
 function AddtoCart () {
     let cart = localStorage.getItem('cart');

@@ -14,7 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     input.value = value;
+    
   });
+
+ if(localStorage.getItem('dark-mode') === 'true'){
+        document.body.classList.toggle('dark-mode');
+    }
 
 document.getElementById("cardNumber").addEventListener("input", function (event) {
     const input = event.target;
@@ -137,3 +142,15 @@ function SetTotal(grandTotal, shippingCost){
         })
         }
       }, false);
+
+
+      function ChangeMode() {
+        if(localStorage.getItem('darkMode') === 'true'){
+            localStorage.setItem('darkMode',"")
+            document.body.classList.remove('dark-mode');
+        }else{
+            localStorage.setItem("darkMode",'true')
+            document.body.classList.toggle('dark-mode');
+        }    
+    }
+    

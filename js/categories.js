@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 
-    if(localStorage.getItem('darkMode') === 'true'){
+    if(localStorage.getItem('dark-mode') === 'true'){
         document.body.classList.toggle('dark-mode');
     }
 
@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+
 function ChangeMode() {
     if(localStorage.getItem('darkMode') === 'true'){
         localStorage.setItem('darkMode',"")

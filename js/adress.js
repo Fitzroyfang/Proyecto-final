@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    document.addEventListener("DOMContentLoaded", function(){
+      if(localStorage.getItem('darkMode') === 'true'){
+        document.body.classList.toggle('dark-mode');
+    }
+    });
+
     // Obtener los valores del formulario
     const direccionData = {
       departamento: document.getElementById("departamento").value,
@@ -57,3 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }, false);
   });
 });
+
+function ChangeMode() {
+  if(localStorage.getItem('darkMode') === 'true'){
+      localStorage.setItem('darkMode',"")
+      document.body.classList.remove('dark-mode');
+  }else{
+      localStorage.setItem("darkMode",'true')
+      document.body.classList.toggle('dark-mode');
+  }    
+}

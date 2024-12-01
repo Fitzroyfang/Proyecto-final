@@ -13,6 +13,12 @@ function saveShippingOption(selectedOption) {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function(){
+   if(localStorage.getItem('darkMode') === 'true'){
+        document.body.classList.toggle('dark-mode');
+    }
+  });
+
 // Función para calcular y mostrar el costo de envío
 
 function calcularEnvio(subtotal) {
@@ -137,3 +143,14 @@ async function showProducts(products) {
     const grandTotal = total + shippingCost;
     SetTotal(grandTotal, shippingCost);
 }
+
+function ChangeMode() {
+    if(localStorage.getItem('darkMode') === 'true'){
+        localStorage.setItem('darkMode',"")
+        document.body.classList.remove('dark-mode');
+    }else{
+        localStorage.setItem("darkMode",'true')
+        document.body.classList.toggle('dark-mode');
+    }    
+}
+

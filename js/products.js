@@ -24,6 +24,8 @@ function ChangeMode() {
     }    
 }
 
+
+
 function showCategoriesList(array) {
     let htmlContentToAppend = "";
     console.log(array)
@@ -55,7 +57,7 @@ function showCategoriesList(array) {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
-    if(localStorage.getItem('darkMode') === 'true'){
+    if(localStorage.getItem('dark-mode') === 'true'){
         document.body.classList.toggle('dark-mode');
     }
     const catID = localStorage.getItem("catID");

@@ -28,7 +28,7 @@ function updateTotalCosts(){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-    if(localStorage.getItem('darkMode') === 'true'){
+    if(localStorage.getItem('dark-mode') === 'true'){
         document.body.classList.toggle('dark-mode');
     }
 

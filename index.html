@@ -95,9 +95,7 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li>
-            <button  onclick="ChangeMode()">Cambiar Modo</button>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-item usuario dropdown-toggle" href="my-profile.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuario-index">Iniciar sesión</a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -106,6 +104,12 @@
               </a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
+              <li>
+                <button  onclick="ChangeMode()" id="btn-darkmode">
+                      <img src="img/moon_15961741.png" alt="Moon icon" class="img-switch">
+                      <img src="img/sun_869818.png" alt="Sun icon" class="img-switch">
+              </button>
+              </li>
             </ul>
           </li>
         </ul>
@@ -116,7 +120,7 @@
   <main>
     <div class="jumbotron text-center"></div>
 
-    <div class="album my-5 bg-light">
+    <div class="album my-5" id="album">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
