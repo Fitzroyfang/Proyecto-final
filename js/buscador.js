@@ -2,7 +2,7 @@ const searchContainer = document.querySelector('.search-input-box');
 const inputSearch = searchContainer.querySelector('input');
 const boxSuggestions = document.querySelector('.container-suggestions');
 
-const searchLink = document.querySelector('a');
+const searchLink = document.querySelectorAll('a');
 
 
 

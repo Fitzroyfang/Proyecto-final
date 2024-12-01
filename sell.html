@@ -106,9 +106,7 @@
           <li class="nav-item">
             <a class="nav-link active" href="sell.html">Vender</a>
           </li>
-          <li>
-            <button  onclick="ChangeMode()">Cambiar modo</button>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-item usuario dropdown-toggle" href="login.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuario-sell">Iniciar sesión</a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -117,6 +115,21 @@
               </a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
+              <li><!-- Modo oscuro -->
+                <div class="form-check form-switch mt-3">
+                  <input type="checkbox" id="btnSwitch">
+                  <label for="btnSwitch" id="labelSwitch">
+                    <img src="img/moon_15961741.png" alt="Moon icon" class="img-switch">
+                  </label>
+                  
+                  <!-- Modo claro -->
+                  <input type="checkbox" id="btnSwitch2">
+                  <label class="form-check-label" for="btnSwitch2">
+                    <img src="img/sun_869818.png" alt="Sun icon" class="img-switch">
+                  </label>
+                </div>
+              </div> 
+            </li>
             </ul>
           </li>
         </ul>

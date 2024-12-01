@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    document.addEventListener("DOMContentLoaded", function(){
+      if(localStorage.getItem('darkMode') === 'true'){
+        document.body.classList.toggle('dark-mode');
+    }
+    });
+
     // Obtener los valores del formulario
     const direccionData = {
       departamento: document.getElementById("departamento").value,
@@ -57,3 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }, false);
   });
 });
+
+ // Evento para activar el modo oscuro
+ btnSwitch.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode', btnSwitch.checked);
+  btnSwitch2.checked = false; // Desactivar el otro switch
+  localStorage.setItem('dark-mode', btnSwitch.checked ? 'enabled' : 'disabled');
+});
+
+// Evento para desactivar el modo oscuro
+btnSwitch2.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode', btnSwitch2.checked);
+  btnSwitch.checked = false; 
+  localStorage.setItem('dark-mode', btnSwitch2.checked ? 'disabled' : 'enabled');
+});
+

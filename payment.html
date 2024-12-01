@@ -35,6 +35,21 @@
                   </a></li>
                   <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
                   <li><a class="dropdown-item close_session" href="login.html">Cerrar sesion</a></li>
+                  <li><!-- Modo oscuro -->
+                    <div class="form-check form-switch mt-3">
+                      <input type="checkbox" id="btnSwitch">
+                      <label for="btnSwitch" id="labelSwitch">
+                        <img src="img/moon_15961741.png" alt="Moon icon" class="img-switch">
+                      </label>
+                      
+                      <!-- Modo claro -->
+                      <input type="checkbox" id="btnSwitch2">
+                      <label class="form-check-label" for="btnSwitch2">
+                        <img src="img/sun_869818.png" alt="Sun icon" class="img-switch">
+                      </label>
+                    </div>
+                  </div> 
+                </li>
                 </ul>
             </ul>
             <img id="profilePic" alt="Foto de perfil" class="profile-Pic">
@@ -110,7 +125,7 @@
             <div class="container" id="fotosPago">
             <div class="imageContainer">
               <img src="img/Formas_de_Pago-min-scaled.jpg" class="métodos">
-              <img src="img/Abitab_2014.png" class="métodos">
+              <img src="img/abitab.png" class="métodos">
             </div>
           </div>
           <label  id="submitPay">
@@ -133,6 +148,7 @@
           </div>
         </div>
       </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/shipping.js"></script>
     <script src="js/my-profile.js"></script>
