@@ -1,6 +1,15 @@
 const express = require('express');
 const app = express();
 const port = 3001;
+const mariadb = require("mariadb");
+
+const pool = mariadb.createPool({
+    host: "localhost",
+    user: "root",
+    password: "1234",
+    database: "Proyecto_final",
+    connectionLimit: 5,
+  });
 
 const fs = require('fs');
 const path = require('path');
@@ -12,10 +21,18 @@ app.use(cors())
 //para generar las claves viene con node.js
 const crypto = require('crypto');
 
+app.use("/cart", (req, res, next) =>{
+    try {
+        const decoded = jwt.verify(req.headers["access-token"], publicKey, {algorithm: 'RS256'});
+        console.log(decoded);
+        next();
+    } catch (err) {
+        res.status(401).json({message: "Usuario no autorizado"});
+    }
+})
 
-
-var jwt = require('jsonwebtoken');
-var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
+const jwt = require('jsonwebtoken');
+const token = jwt.sign({ foo: 'bar' }, 'shhhhh');
 
 // Generar un par de claves RSA
 const { publicKey, privateKey } = crypto.generateKeyPairSync('rsa', {
@@ -122,7 +139,8 @@ app.post('/login', (req, res) => {
 
         // Generación del token usando la clave privada
         const token = jwt.sign({ email: user.Mail }, privateKey, {
-            algorithm: 'RS256' 
+            algorithm: 'RS256',
+            expiresIn: "1h" 
         });
 
         // Preparar la respuesta con el token generado
@@ -137,6 +155,23 @@ app.post('/login', (req, res) => {
     }
 });
 
+app.post("/cart", async (req, res) => {
+    let conn;
+    try {
+      conn = await pool.getConnection();
+      const response = await conn.query(
+        `INSERT INTO cart(user, item_id, quantity) VALUES(?, ?, ?)`,
+        [req.body.user, req.body.item_id, req.body.quantity]
+      );
+  
+      res.json({...req.body });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Error de servidor" });
+    } finally {
+      if (conn) conn.release(); //release to pool
+    }
+  });
 
 // Iniciar servidor
 app.listen(port, () => {
